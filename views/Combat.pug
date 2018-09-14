@@ -1,0 +1,122 @@
+html
+	head
+		include includes/head.pug
+
+	body
+
+		include includes/navbar.pug
+
+		main(role="main" class="container")
+
+			div(class="container")
+
+				div(class="row")
+				
+					div(class="col-lg-3")
+
+						h3 Combat Stats
+
+						p
+							b TODO: 
+							= "TODO"
+
+		
+
+					div(class="col-lg-9")
+
+						h3 Equipped Armor
+
+						div(class="table-responsive")
+
+							table(class="table table-striped table-sm")
+								thead
+									tr
+										th Item 
+										th Armor Type 
+										th Armor Class
+										th Stealth
+										//th Equipped
+								- for (var i = 0; i < data.calculated.inventory.length; i++) 
+									if (data.calculated.inventory[i].type == 'Armor' && data.calculated.inventory[i].equipped)
+										tr
+											td= data.calculated.inventory[i].item
+											td= data.calculated.inventory[i].subtype
+											td= data.calculated.inventory[i].armorClass
+											td= data.calculated.inventory[i].stealth
+											//td= data.calculated.inventory[i].equipped
+
+						br
+
+						h3 Equipped Weapons
+
+						div(class="table-responsive")
+
+							table(class="table table-striped table-sm")
+								thead
+									tr
+										th Item 
+										th Weapon Type 
+										th Damage
+										th Properties
+										//th Equipped
+								- for (var i = 0; i < data.calculated.inventory.length; i++) 
+									if (data.calculated.inventory[i].type == 'Weapon' && data.calculated.inventory[i].equipped)
+										tr
+											td= data.calculated.inventory[i].item
+											td= data.calculated.inventory[i].subtype
+											td= data.calculated.inventory[i].damage
+											td= data.calculated.inventory[i].properties
+											//td= data.calculated.inventory[i].equipped											
+
+						br
+
+						h3 Spells
+						
+						- for (var i = 0; i < data.calculated.spells.length; i++)
+							p
+								a(
+									class="btn"
+									data-toggle="collapse"
+									href="#collapse"+i
+									role="button"
+									aria-expanded="false"
+									aria-controls="collapse"+i
+								)
+									= "+"
+								b= data.calculated.spells[i].spell
+
+							div(
+								class="collapse"
+								id="collapse"+i
+							)
+								div(class="card card-body")
+
+									p
+										em= "Level " + data.calculated.spells[i].level + " " +  data.calculated.spells[i].school
+
+									div(class="table-responsive")
+
+										table(class="table table-striped table-sm")
+											thead
+												tr
+													th Casting Time
+													th Range
+													th Components
+													th Duration
+												tr
+													td= data.calculated.spells[i].castingTime 
+													td= data.calculated.spells[i].range
+													td= data.calculated.spells[i].components	
+													td= data.calculated.spells[i].duration
+
+									p
+										b Description:  
+										=  data.calculated.spells[i].description
+										
+									p
+										b At Higher Levels:  
+										=  data.calculated.spells[i].higherLevelDescription
+								
+
+		include includes/bootjs.pug
+

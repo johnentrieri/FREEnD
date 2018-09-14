@@ -1,0 +1,61 @@
+[
+	{
+		"spell" : "Cure Wounds",
+		"level" : 1,
+		"school" : "Evocation",
+		"castingTime" : "1 Action",
+		"range" : "Touch",
+		"components" : "V S",
+		"duration" : "Instantaneous",
+		"description" : "A creature you touch regains hit points equal to 1d8 + your spellcasting modifier. This spell has no effect on undead or constructs.",
+		"higherLevelDescription" : "The healing increases by 1d8 for each slot level above 1st. "
+	},
+	
+	{
+		"spell" : "Speak With Animals",
+		"level" : 1,
+		"school" : "Divination",
+		"castingTime" : "1 Action (Ritual)",
+		"range" : "Self",
+		"components" : "V S",
+		"duration" : "10 Minutes",
+		"description" : "Although limited by the intelligence of the beast, you can understand and speak with beasts. You learn about the beast's experiences over the last day, as well as local places and creatures. If your DM allows, the beast may also complete a small task for you, if you can successfully convince it to do so. ",
+		"higherLevelDescription" : "N/A"
+	},
+	
+	{
+		"spell" : "Thunderwave",
+		"level" : 1,
+		"school" : "Evocation",
+		"castingTime" : "1 Action",
+		"range" : "Self (15ft Cube)",
+		"components" : "V S",
+		"duration" : "Instantaneous",
+		"description" : "Each creature in a 15-foot cube originating from you must make a Constitution save. On failure, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a success, the creature takes half damage and isn't pushed. Unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect. The spell emits a thunderous boom audible out to 300 feet.",
+		"higherLevelDescription" : "The damage increases by 1d8 for each slot level above 1st."
+	},
+	
+	{
+		"spell" : "Faerie Fire",
+		"level" : 1,
+		"school" : "Evocation",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V",
+		"duration" : "Concentration Up to 1 Minute",
+		"description" : "Blue, green, or violet lights outline objects inside a 20-foot cube of space. All creatures in the area make a Dexterity save or be cast in light as well. The light cast by this spell illuminates a 10-foot radius. An attack can be made with advantage against any creature or object that is affected by this spell and that creature or object cannot become invisible.",
+		"higherLevelDescription" : "N/A"
+	},
+	
+	{
+		"spell" : "Heroism",
+		"level" : 1,
+		"school" : "Enchantment",
+		"castingTime" : "1 Action",
+		"range" : "Touch",
+		"components" : "V S",
+		"duration" : "Concentration Up to 1 Minute",
+		"description" : "Until the spell ends, a creature you touch is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points.",
+		"higherLevelDescription" : "You can target one additional creature for each slot level above 1st"
+	}
+]

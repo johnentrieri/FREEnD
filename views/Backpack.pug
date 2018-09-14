@@ -1,0 +1,83 @@
+html
+	head
+		include includes/head.pug
+
+	body
+
+		include includes/navbar.pug
+
+		main(role="main" class="container")
+
+			div(class="container")
+
+				div(class="row")
+				
+					div(class="col-lg-3")
+
+						h3 Currency
+		
+						p
+							b Platinum: 
+							= data.base.character.currency.platinum
+
+						p
+							b Gold: 
+							= data.base.character.currency.gold		
+						p
+							b Silver: 
+							= data.base.character.currency.silver		
+						p
+							b Copper: 
+							= data.base.character.currency.copper
+
+						p
+							b Total Currency: 
+							= "TODO"
+
+						br
+
+						h3 Carrying Stats
+		
+						p
+							b Carrying Weight: 
+							= data.calculated.carryingWeight
+							
+						p
+							b Carrying Capacity: 
+							= data.calculated.carryingCapacity
+
+						p
+							b Encumbered: 
+							= "TODO"
+
+		
+
+					div(class="col-lg-9")
+
+						h3 Equipment
+
+						div(class="table-responsive")
+
+							table(class="table table-striped table-sm")
+								thead
+									tr
+										th Item 
+										th Quantity 
+										th Unit Cost (gp)
+										th Cost (gp)
+										th Unit Weight (lbs)
+										th Weight (lbs)
+										//th Equipped
+			
+								- for (var i = 0; i < data.calculated.inventory.length; i++) 
+									tr
+										td= data.calculated.inventory[i].item
+										td= data.calculated.inventory[i].qty
+										td= data.calculated.inventory[i].unitCost
+										td= data.calculated.inventory[i].cost
+										td= data.calculated.inventory[i].unitWeight
+										td= data.calculated.inventory[i].weight
+										//td= data.calculated.inventory[i].equipped
+
+		include includes/bootjs.pug
+

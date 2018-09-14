@@ -1,0 +1,419 @@
+html
+	head
+		link( 
+			rel="stylesheet" 
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+			crossorigin="anonymous"
+		)
+
+		title MEAN DnD
+
+	body
+		nav(class="navbar navbar-expand-md navbar-dark fixed-top bg-dark")
+			a(
+				class="navbar-brand" 
+				href="#"
+			)
+				=data.base.userData.username
+			button(
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+			)
+				span(class="navbar-toggler-icon")
+
+			div(
+				class="collapse navbar-collapse"
+				id="navbarsExampleDefault"
+			)
+				ul(class="navbar-nav mr-auto")
+					li(class="nav-item active")
+						a(
+							class="nav-link"
+							href=data.site.tab1Path
+						)
+							=data.site.tab1Name
+
+					li(class="nav-item active")
+						a(
+							class="nav-link"
+							href=data.site.tab2Path
+						)
+							=data.site.tab2Name
+
+					li(class="nav-item active")
+						a(
+							class="nav-link"
+							href=data.site.tab3Path
+						)
+							=data.site.tab3Name
+
+					li(class="nav-item active")
+						a(
+							class="nav-link"
+							href=data.site.tab3Path
+						)
+							=data.site.tab3Name
+
+			
+		
+		h1 User Data
+		
+		p
+			b First Name: 
+			= data.base.userData.firstName
+		p
+			b Last Name: 
+			= data.base.userData.lastName
+		p
+			b Email: 
+			= data.base.userData.email
+		p
+			b Username: 
+			= data.base.userData.username
+		
+		br
+		
+		h1 Character
+		
+		p
+			b First Name: 
+			= data.base.character.firstName
+		p
+			b Last Name: 
+			= data.base.character.lastName
+		p
+			b Level: 
+			= data.base.character.level
+		p
+			b Class: 
+			= data.base.character.class
+		p
+			b Race: 
+			= data.base.character.race
+		p
+			b Subrace: 
+			= data.base.character.subrace
+		p
+			b Age: 
+			= data.base.character.age
+		p
+			b Height: 
+			= data.base.character.height
+		p
+			b Weight: 
+			= data.base.character.weight
+		p
+			b Background: 
+			= data.base.character.background
+		p
+			b Alignment: 
+			= data.base.character.alignment
+		
+		br
+		
+	
+		h1 Abilities
+		
+		p
+			b Strength: 
+			= data.base.character.abilities.strength
+			= " (" + data.calculated.modifier.strength + ')'			
+		p
+			b Dexterity: 
+			= data.base.character.abilities.dexterity
+			= " (" + data.calculated.modifier.dexterity + ')'			
+		p
+			b Constitution: 
+			= data.base.character.abilities.constitution
+			= " (" + data.calculated.modifier.constitution + ')'			
+		p
+			b Intelligence: 
+			= data.base.character.abilities.intelligence
+			= " (" + data.calculated.modifier.intelligence + ')'			
+		p
+			b Wisdom: 
+			= data.base.character.abilities.wisdom
+			= " (" + data.calculated.modifier.wisdom + ')'			
+		p
+			b Charisma: 
+			= data.base.character.abilities.charisma
+			= " (" + data.calculated.modifier.charisma + ')'			
+		
+		br
+		
+		h1 Currency
+		
+		p
+			b Platinum: 
+			= data.base.character.currency.platinum
+
+		p
+			b Gold: 
+			= data.base.character.currency.gold		
+		p
+			b Silver: 
+			= data.base.character.currency.silver		
+		p
+			b Copper: 
+			= data.base.character.currency.copper		
+		
+		br
+		
+		h1 Calculated Data
+		
+		p
+			b Proficiency Bonus: 
+			= data.calculated.proficiencyBonus
+			
+		p
+			b Speed: 
+			= data.calculated.speed
+			
+		p
+			b Passive Perception: 
+			= data.calculated.passivePerception
+			
+		p
+			b Initiative Bonus: 
+			= data.calculated.initiative
+			
+		p
+			b Spell Attack Bonus: 
+			= data.calculated.spellAttackBonus
+			
+		p
+			b Spell Save DC: 
+			= data.calculated.spellSaveDC
+		
+		br
+		
+		h3 Ability Checks
+
+		p
+			b Strength: 
+			= data.calculated.check.strength
+		p
+			b Dexterity: 
+			= data.calculated.check.dexterity
+		p
+			b Constitution: 
+			= data.calculated.check.constitution
+		p
+			b Intelligence: 
+			= data.calculated.check.intelligence
+		p
+			b Wisdom: 
+			= data.calculated.check.wisdom
+		p
+			b Charisma: 
+			= data.calculated.check.charisma
+		
+		br
+		
+		h3 Skill Checks
+
+		p
+			b Acrobatics: 
+			= data.calculated.check.acrobatics
+		p
+			b Animal Handling: 
+			= data.calculated.check.animalHandling
+		p
+			b Arcana: 
+			= data.calculated.check.arcana
+		p
+			b Athletics: 
+			= data.calculated.check.athletics
+		p
+			b Deception: 
+			= data.calculated.check.deception
+		p
+			b History: 
+			= data.calculated.check.history
+		p
+			b Insight: 
+			= data.calculated.check.insight
+		p
+			b Intimidation: 
+			= data.calculated.check.intimidation
+		p
+			b Investigation: 
+			= data.calculated.check.investigation
+		p
+			b Medicine: 
+			= data.calculated.check.medicine
+		p
+			b Nature: 
+			= data.calculated.check.nature
+		p
+			b Parception: 
+			= data.calculated.check.perception
+		p
+			b Performance: 
+			= data.calculated.check.performance
+		p
+			b Persuasion: 
+			= data.calculated.check.persuasion
+		p
+			b Religion: 
+			= data.calculated.check.religion
+		p
+			b Sleight: 
+			= data.calculated.check.sleight
+		p
+			b Stealth: 
+			= data.calculated.check.stealth
+		p
+			b Survival: 
+			= data.calculated.check.survival
+		br
+		
+		h3 Saving Throws
+
+		p
+			b Strength: 
+			= data.calculated.save.strength
+		p
+			b Dexterity: 
+			= data.calculated.save.dexterity
+		p
+			b Constitution: 
+			= data.calculated.save.constitution
+		p
+			b Intelligence: 
+			= data.calculated.save.intelligence
+		p
+			b Wisdom: 
+			= data.calculated.save.wisdom
+		p
+			b Charisma: 
+			= data.calculated.save.charisma
+			
+		br
+		
+		h3 Inventory
+		
+		table
+			thead
+				tr
+					u
+					td | Item 
+					td | Quantity 
+					td | Unit Cost (gp)
+					td | Cost (gp)
+					td | Unit Weight (lbs)
+					td | Weight (lbs)
+					//td | Equipped
+			
+			- for (var i = 0; i < data.calculated.inventory.length; i++) 
+				tr
+					td= "| " + data.calculated.inventory[i].item
+					td= "| " + data.calculated.inventory[i].qty
+					td= "| " + data.calculated.inventory[i].unitCost
+					td= "| " + data.calculated.inventory[i].cost
+					td= "| " + data.calculated.inventory[i].unitWeight
+					td= "| " + data.calculated.inventory[i].weight
+					//td= "| " + data.calculated.inventory[i].equipped
+					
+		br
+
+		h3 Equipped Weapon Inventory
+		
+		table
+			thead
+				tr
+					u
+					td | Item 
+					td | Weapon Type 
+					td | Damage 
+					td | Properties 
+					//td | Equipped 
+			
+			- for (var i = 0; i < data.calculated.inventory.length; i++) 
+				if (data.calculated.inventory[i].type == 'Weapon' && data.calculated.inventory[i].equipped)
+					tr
+						td= "| " + data.calculated.inventory[i].item
+						td= "| " + data.calculated.inventory[i].subtype
+						td= "| " + data.calculated.inventory[i].damage
+						td= "| " + data.calculated.inventory[i].properties
+						//td= "| " + data.calculated.inventory[i].equipped
+					
+		br
+
+		h3 Equipped Armor Inventory
+		
+		table
+			thead
+				tr
+					u
+					td | Item
+					td | Armor Type
+					td | Armor Class 
+					td | Stealth 
+					//td | Equipped 
+			
+			- for (var i = 0; i < data.calculated.inventory.length; i++) 
+				if (data.calculated.inventory[i].type == 'Armor' && data.calculated.inventory[i].equipped)
+					tr
+						td= "| " + data.calculated.inventory[i].item
+						td= "| " + data.calculated.inventory[i].subtype
+						td= "| " + data.calculated.inventory[i].armorClass
+						td= "| " + data.calculated.inventory[i].stealth
+						//td= "| " + data.calculated.inventory[i].equipped
+					
+		br
+
+		p
+			b Carrying Weight: 
+			= data.calculated.carryingWeight
+			
+		p
+			b Carrying Capacity: 
+			= data.calculated.carryingCapacity
+		
+		h3 Cantrips
+		
+		- for (var i = 0; i < data.base.character.cantrips.length; i++) 
+			p= data.base.character.cantrips[i]
+		
+		
+		br
+		
+		h3 Spells
+		
+		- for (var i = 0; i < data.calculated.spells.length; i++) 
+			p
+				b= data.calculated.spells[i].spell
+				
+			p= "-  Level " + data.calculated.spells[i].level + " " +  data.calculated.spells[i].school
+			p
+				b - Casting Time: 
+				=  data.calculated.spells[i].castingTime
+				
+			p
+				b - Range: 
+				=  data.calculated.spells[i].range
+				
+			p
+				b - Components: 
+				=  data.calculated.spells[i].components
+				
+			p
+				b - Duration:  
+				=  data.calculated.spells[i].duration
+				
+			p
+				b - Description:  
+				=  data.calculated.spells[i].description
+				
+			p
+				b - At Higher Levels:  
+				=  data.calculated.spells[i].higherLevelDescription
+				
+			p -----------------------------------------------------------------------------------------------

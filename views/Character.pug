@@ -1,0 +1,220 @@
+html
+	head
+		include includes/head.pug
+
+	body
+
+		include includes/navbar.pug
+
+		main(role="main" class="container")
+
+			div(class="container")
+
+				div(class="row")
+				
+					div(class="col-lg-3")
+
+						img(
+							class="rounded-circle"
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+							alt="Generic placeholder image"
+							width="140"
+							height="140"
+						)
+						
+						br
+
+						br
+
+						h2= data.base.character.firstName + " " + data.base.character.lastName
+				
+						p
+							b Level: 
+							= data.base.character.level
+						p
+							b Class: 
+							= data.base.character.class
+						p
+							b Race: 
+							= data.base.character.subrace + " " + data.base.character.race
+
+						p
+							b Age: 
+							= data.base.character.age
+						p
+							b Height: 
+							= data.base.character.height
+						p
+							b Weight: 
+							= data.base.character.weight
+						p
+							b Background: 
+							= data.base.character.background
+						p
+							b Alignment: 
+							= data.base.character.alignment
+
+						br
+
+						h3 Abilities
+				
+						p
+							b Strength: 
+							= data.base.character.abilities.strength
+							= " (" + data.calculated.modifier.strength + ')'			
+						p
+							b Dexterity: 
+							= data.base.character.abilities.dexterity
+							= " (" + data.calculated.modifier.dexterity + ')'			
+						p
+							b Constitution: 
+							= data.base.character.abilities.constitution
+							= " (" + data.calculated.modifier.constitution + ')'			
+						p
+							b Intelligence: 
+							= data.base.character.abilities.intelligence
+							= " (" + data.calculated.modifier.intelligence + ')'			
+						p
+							b Wisdom: 
+							= data.base.character.abilities.wisdom
+							= " (" + data.calculated.modifier.wisdom + ')'			
+						p
+							b Charisma: 
+							= data.base.character.abilities.charisma
+							= " (" + data.calculated.modifier.charisma + ')'
+
+					div(class="col-lg-3")
+
+						h3 Calculated Data
+						
+						p
+							b Proficiency Bonus: 
+							= data.calculated.proficiencyBonus
+							
+						p
+							b Speed: 
+							= data.calculated.speed
+							
+						p
+							b Passive Perception: 
+							= data.calculated.passivePerception
+							
+						p
+							b Initiative Bonus: 
+							= data.calculated.initiative
+							
+						p
+							b Spell Attack Bonus: 
+							= data.calculated.spellAttackBonus
+							
+						p
+							b Spell Save DC: 
+							= data.calculated.spellSaveDC
+
+					div(class="col-lg-3")
+
+						h3 Skill Checks
+
+						p
+							b Acrobatics: 
+							= data.calculated.check.acrobatics
+						p
+							b Animal Handling: 
+							= data.calculated.check.animalHandling
+						p
+							b Arcana: 
+							= data.calculated.check.arcana
+						p
+							b Athletics: 
+							= data.calculated.check.athletics
+						p
+							b Deception: 
+							= data.calculated.check.deception
+						p
+							b History: 
+							= data.calculated.check.history
+						p
+							b Insight: 
+							= data.calculated.check.insight
+						p
+							b Intimidation: 
+							= data.calculated.check.intimidation
+						p
+							b Investigation: 
+							= data.calculated.check.investigation
+						p
+							b Medicine: 
+							= data.calculated.check.medicine
+						p
+							b Nature: 
+							= data.calculated.check.nature
+						p
+							b Parception: 
+							= data.calculated.check.perception
+						p
+							b Performance: 
+							= data.calculated.check.performance
+						p
+							b Persuasion: 
+							= data.calculated.check.persuasion
+						p
+							b Religion: 
+							= data.calculated.check.religion
+						p
+							b Sleight: 
+							= data.calculated.check.sleight
+						p
+							b Stealth: 
+							= data.calculated.check.stealth
+						p
+							b Survival: 
+							= data.calculated.check.survival
+
+					div(class="col-lg-3")
+
+						h3 Ability Checks
+
+						p
+							b Strength: 
+							= data.calculated.check.strength
+						p
+							b Dexterity: 
+							= data.calculated.check.dexterity
+						p
+							b Constitution: 
+							= data.calculated.check.constitution
+						p
+							b Intelligence: 
+							= data.calculated.check.intelligence
+						p
+							b Wisdom: 
+							= data.calculated.check.wisdom
+						p
+							b Charisma: 
+							= data.calculated.check.charisma
+
+						br
+
+						h3 Saving Throws
+
+						p
+							b Strength: 
+							= data.calculated.save.strength
+						p
+							b Dexterity: 
+							= data.calculated.save.dexterity
+						p
+							b Constitution: 
+							= data.calculated.save.constitution
+						p
+							b Intelligence: 
+							= data.calculated.save.intelligence
+						p
+							b Wisdom: 
+							= data.calculated.save.wisdom
+						p
+							b Charisma: 
+							= data.calculated.save.charisma
+
+		include includes/bootjs.pug
+
