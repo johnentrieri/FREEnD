@@ -23,11 +23,15 @@ function statCalc(data, spellData, itemData) {
 	calcData.totalCurrency += data.character.currency.gold * 1.0;
 	calcData.totalCurrency += data.character.currency.silver * 0.1;
 	calcData.totalCurrency += data.character.currency.copper * 0.01;
-
+	
 	//TODO - Easy:
 		//TODO - maxSpellSlots
+		//TODO - Racial Abilities
+		//TODO - Background Abilities
+		//TODO - Languages
 	
 	//TODO - Hard:
+		//TODO - Max Spell Slots
 		//TODO - armorClass
 		//TODO - encumberance
 		//TODO - spells
@@ -224,7 +228,7 @@ function statCalc(data, spellData, itemData) {
 	
 	if (data.character.checkProficiency.investigation) {
 		calcData.check.investigation = calcData.modifier.intelligence + calcData.proficiencyBonus; 
-		//if (data.character.bard.expertise.investigation) {calcData.check.investigation += calcData.proficiencyBonus;}
+		if (data.character.bard.expertise.investigation) {calcData.check.investigation += calcData.proficiencyBonus;}
 	}
 	else { 
 		if (calcData.bard.jackOfAllTrades) {calcData.check.investigation = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
@@ -394,8 +398,6 @@ function statCalc(data, spellData, itemData) {
 	}
 
 	//Class Abilities
-	
-
 	if (data.character.class = 'Bard') {
 		tempAbility = {};
 		tempAbility.name = "Bardic Inspiration";
@@ -426,10 +428,6 @@ function statCalc(data, spellData, itemData) {
 			calcData.classAbilities.push(tempAbility);
 		}
 	}
-
-
-	
-	//Max Spell Slots
 	
 	return(calcData);
 }	
