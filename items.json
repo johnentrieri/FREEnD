@@ -176,6 +176,14 @@
 	},
 	
 	{	
+		"item" : "Scroll of Charm Person",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},
+
+	{	
 		"item" : "Bottle, Glass",
 		"type": "Adventuring Gear",
 		"subtype" : "N/A",
@@ -260,6 +268,14 @@
 		"subtype" : "N/A",
 		"cost" : 0.5,
 		"weight" : 2
+	},	
+
+	{	
+		"item" : "Rice (1 lb)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
 	},	
 	
 	{	

@@ -85,6 +85,23 @@ html
 
 					div(class="col-lg-3")
 
+						h3 Statistics
+
+						p
+							b Health Points: 
+							= data.base.character.stats.HP + " / " + data.base.character.stats.maxHP
+
+						p
+							b Hit Die: 
+							= data.base.character.stats.hitDie
+
+						p
+							b Bardic Inspiration: 
+							= data.base.character.bard.bardicInspiration + " / " + data.calculated.bard.maxBardicInspiration
+							= " (" + data.calculated.bard.bardicInspirationDie + ")"
+						
+						br
+						
 						h3 Calculated Data
 						
 						p
@@ -116,57 +133,129 @@ html
 						h3 Skill Checks
 
 						p
+							- if (data.base.character.checkProficiency.acrobatics)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.acrobatics)
+								b &#x2605 
 							b Acrobatics: 
 							= data.calculated.check.acrobatics
 						p
+							- if (data.base.character.checkProficiency.animalHandling)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.animalHandling)
+								b &#x2605 
 							b Animal Handling: 
 							= data.calculated.check.animalHandling
 						p
+							- if (data.base.character.checkProficiency.arcana)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.arcana)
+								b &#x2605 
 							b Arcana: 
 							= data.calculated.check.arcana
 						p
+							- if (data.base.character.checkProficiency.athletics)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.athletics)
+								b &#x2605 
 							b Athletics: 
 							= data.calculated.check.athletics
 						p
+							- if (data.base.character.checkProficiency.deception)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.deception)
+								b &#x2605 
 							b Deception: 
 							= data.calculated.check.deception
 						p
+							- if (data.base.character.checkProficiency.history)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.history)
+								b &#x2605 
 							b History: 
 							= data.calculated.check.history
 						p
+							- if (data.base.character.checkProficiency.insight)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.insight)
+								b &#x2605 
 							b Insight: 
 							= data.calculated.check.insight
 						p
+							- if (data.base.character.checkProficiency.intimidation)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.intimidation)
+								b &#x2605 
 							b Intimidation: 
 							= data.calculated.check.intimidation
 						p
+							- if (data.base.character.checkProficiency.investigation)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.investigation)
+								b &#x2605 
 							b Investigation: 
 							= data.calculated.check.investigation
 						p
+							- if (data.base.character.checkProficiency.medicine)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.medicine)
+								b &#x2605 
 							b Medicine: 
 							= data.calculated.check.medicine
 						p
+							- if (data.base.character.checkProficiency.nature)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.nature)
+								b &#x2605 
 							b Nature: 
 							= data.calculated.check.nature
 						p
-							b Parception: 
+							- if (data.base.character.checkProficiency.perception)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.perception)
+								b &#x2605 
+							b Perception: 
 							= data.calculated.check.perception
 						p
+							- if (data.base.character.checkProficiency.performance)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.performance)
+								b &#x2605 
 							b Performance: 
 							= data.calculated.check.performance
 						p
+							- if (data.base.character.checkProficiency.persuasion)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.persuasion)
+								b &#x2605 
 							b Persuasion: 
 							= data.calculated.check.persuasion
 						p
+							- if (data.base.character.checkProficiency.religion)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.religion)
+								b &#x2605 
 							b Religion: 
 							= data.calculated.check.religion
 						p
-							b Sleight: 
+							- if (data.base.character.checkProficiency.sleight)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.sleight)
+								b &#x2605 
+							b Sleight of Hand: 
 							= data.calculated.check.sleight
 						p
+							- if (data.base.character.checkProficiency.stealth)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.stealth)
+								b &#x2605 
 							b Stealth: 
 							= data.calculated.check.stealth
 						p
+							- if (data.base.character.checkProficiency.survival)
+								b &#x2605 
+							- if (data.base.character.bard.expertise.survival)
+								b &#x2605 
 							b Survival: 
 							= data.calculated.check.survival
 
@@ -198,21 +287,33 @@ html
 						h3 Saving Throws
 
 						p
+							- if (data.base.character.saveProficiency.strength)
+								b &#x2605 
 							b Strength: 
 							= data.calculated.save.strength
 						p
+							- if (data.base.character.saveProficiency.dexterity)
+								b &#x2605 
 							b Dexterity: 
 							= data.calculated.save.dexterity
 						p
+							- if (data.base.character.saveProficiency.constitution)
+								b &#x2605 
 							b Constitution: 
 							= data.calculated.save.constitution
 						p
+							- if (data.base.character.saveProficiency.intelligence)
+								b &#x2605 
 							b Intelligence: 
 							= data.calculated.save.intelligence
 						p
+							- if (data.base.character.saveProficiency.wisdom)
+								b &#x2605 
 							b Wisdom: 
 							= data.calculated.save.wisdom
 						p
+							- if (data.base.character.saveProficiency.charisma)
+								b &#x2605 
 							b Charisma: 
 							= data.calculated.save.charisma
 

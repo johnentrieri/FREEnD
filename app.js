@@ -2,8 +2,18 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var fs = require('fs');
+var MongoClient = require('mongodb').MongoClient;
 
-var statCalc = require('./statCalc'); 
+var statCalc = require('./statCalc');
+//var fetchDnD = require('./fetchDnD'); 
+
+// Connection URL
+var url = 'mongodb://localhost:27017';
+
+// Database Name
+var dbName = 'dnd';
+var itemCollectionName = 'items';
+
 
 var app = express();
 
@@ -36,6 +46,18 @@ spellData = JSON.parse(fileData);
 //TODO - Pull DnD Item Data from JSON file
 fileData = fs.readFileSync('items.json','utf8');
 itemData = JSON.parse(fileData);
+
+/*
+MongoClient.connect(url, {useNewUrlParser : true}, function(err, client) {
+
+	console.log("Connected successfully to server");
+
+	client.db(dbName).collection(itemCollectionName).find().toArray( function(err,docs) {
+		var itemData = docs;
+	});
+})
+*/
+
 
 //Perform Calculations
 calcData = statCalc(baseData, spellData, itemData);

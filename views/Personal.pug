@@ -12,11 +12,29 @@ html
 
 				div(class="row")
 				
-					div(class="col-lg-4")
+					div(class="col-lg-12")
 
-					div(class="col-lg-4")
+						h3 Class Abilities
+						- for (var i = 0; i < data.calculated.classAbilities.length; i++)
+								p
+									a(
+										class="btn"
+										data-toggle="collapse"
+										href="#collapse"+i
+										role="button"
+										aria-expanded="false"
+										aria-controls="collapse"+i
+									)
+										= "+"
+									b= data.calculated.classAbilities[i].name
 
-					div(class="col-lg-4")
-
+								div(
+									class="collapse"
+									id="collapse"+i
+								)
+									div(class="card card-body")
+										p
+											= data.calculated.classAbilities[i].description											
+ 
 		include includes/bootjs.pug
 

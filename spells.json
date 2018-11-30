@@ -1,5 +1,29 @@
 [
 	{
+		"spell" : "Vicious Mockery",
+		"level" : "0",
+		"school" : "Enchantment Cantrip",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V",
+		"duration" : "Instantaneous",
+		"description" : "You unleash a string of insults laced with subtle enchantments at a creature you can see within range. If the target can hear you (though it need not understand you), it must succeed on a Wisdom saving throw or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.",
+		"higherLevelDescription" : "This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
+	},
+
+	{
+		"spell" : "Mage Hand",
+		"level" : "0",
+		"school" : "Conjuration Cantrip",
+		"castingTime" : "1 Action",
+		"range" : "30 Feet",
+		"components" : "V S",
+		"duration" : "1 Minute",
+		"description" : "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again. You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it. The hand can't attack, activate magic items, or carry more than 10 pounds.",
+		"higherLevelDescription" : "N/A"
+	},
+
+	{
 		"spell" : "Cure Wounds",
 		"level" : 1,
 		"school" : "Evocation",
@@ -57,5 +81,29 @@
 		"duration" : "Concentration Up to 1 Minute",
 		"description" : "Until the spell ends, a creature you touch is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points.",
 		"higherLevelDescription" : "You can target one additional creature for each slot level above 1st"
+	},
+
+	{
+		"spell" : "Charm Person (Scroll)",
+		"level" : 1,
+		"school" : "Enchantment",
+		"castingTime" : "1 Action",
+		"range" : "30 Feet",
+		"components" : "V S",
+		"duration" : "1 Hour",
+		"description" : "A humanoid you can see must succeed on a Wisdom saving throw, with advantage if you are currently fighting it, or it becomes charmed by you until the spell ends or someone in your party harms it. It will know it has been charmed when the spell ends.",
+		"higherLevelDescription" : "You can target one additional creature for each slot level above 1st. They must be within 30 feet of each other when you target them."
+	},
+
+	{
+		"spell" : "Heat Metal",
+		"level" : 2,
+		"school" : "Transmutation",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V S M (a piece of iron and a flame)",
+		"duration" : "Concentration Up to 1 Minute",
+		"description" : "Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again. If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn. ",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
 	}
 ]

@@ -14,11 +14,52 @@ html
 				
 					div(class="col-lg-3")
 
-						h3 Combat Stats
+						h3 Spell Slots
 
-						p
-							b TODO: 
-							= "TODO"
+						- if (data.base.character.spellSlots.level1 > 0)
+							p
+								b 1st Level: 
+								= data.base.character.spellSlots.level1
+
+						- if (data.base.character.spellSlots.level2 > 0)
+							p
+								b 2nd Level: 
+								= data.base.character.spellSlots.level2
+
+						- if (data.base.character.spellSlots.level3 > 0)
+							p
+								b 3rd Level: 
+								= data.base.character.spellSlots.level3
+
+						- if (data.base.character.spellSlots.level4 > 0)
+							p
+								b 4th Level: 
+								= data.base.character.spellSlots.level4
+
+						- if (data.base.character.spellSlots.level5 > 0)
+							p
+								b 5th Level: 
+								= data.base.character.spellSlots.level5
+
+						- if (data.base.character.spellSlots.level6 > 0)
+							p
+								b 6th Level: 
+								= data.base.character.spellSlots.level6
+
+						- if (data.base.character.spellSlots.level7 > 0)
+							p
+								b 7th Level: 
+								= data.base.character.spellSlots.level7
+
+						- if (data.base.character.spellSlots.level8 > 0)
+							p
+								b 8th Level: 
+								= data.base.character.spellSlots.level8
+
+						- if (data.base.character.spellSlots.level9 > 0)
+							p
+								b 9th Level: 
+								= data.base.character.spellSlots.level9
 
 		
 

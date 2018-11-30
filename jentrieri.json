@@ -8,7 +8,7 @@
 	"character": {
 		"firstName": "Roscoe",
 		"lastName": "Brown",
-		"level": 2,
+		"level": 3,
 		"class": "Bard",
 		"race": "Halfling",
 		"subrace": "Lightfoot",
@@ -20,7 +20,7 @@
 		"stats" :{
 			"HP": 16,
 			"maxHP": 16,
-			"hitDie": 2
+			"hitDie": 3
 		},
 		"abilities": {
 			"strength": 7,
@@ -53,24 +53,44 @@
 			"history": false,
 			"insight": false,
 			"intimidation": false,
-			"investigation": false,
+			"investigation": true,
 			"medicine": true,
 			"nature": false,
-			"perception": false,
+			"perception": true,
 			"performance": true,
 			"persuasion": true,
 			"religion": false,
-			"sleightOfHand": false,
+			"sleight": true,
 			"stealth": true,
 			"survival": false
 		},
 		"bard" : {
-			"bardicInspiration" : 3
+			"bardicInspiration" : 3,
+			"expertise": {
+				"acrobatics": false,
+				"animalHandling": false,
+				"arcana": false,
+				"athletics": false,
+				"deception": false,
+				"history": false,
+				"insight": false,
+				"intimidation": false,
+				"investigation": false,
+				"medicine": false,
+				"nature": false,
+				"perception": true,
+				"performance": true,
+				"persuasion": false,
+				"religion": false,
+				"sleight": false,
+				"stealth": false,
+				"survival": false
+			}
 		},
 		"currency" : {
 			"platinum" : 0,
-			"gold" : 37,
-			"silver" : 60,
+			"gold" : 40,
+			"silver" : 62,
 			"copper" : 73
 		},
 		"inventory" :  [
@@ -91,22 +111,24 @@
 			{ "item" : "Flask", "qty" : 1, "equipped": false },
 			{ "item" : "Torch", "qty" : 1, "equipped": false },
 			{ "item" : "Healer's Kit", "qty" : 2, "equipped": false },
-			{ "item" : "Shawm", "qty" : 1, "equipped": false }
+			{ "item" : "Shawm", "qty" : 1, "equipped": false },
+			{ "item" : "Rice (1 lb)", "qty" : 4, "equipped": false },
+			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false }
 		],
 		"spells" : [
+			"Vicious Mockery",
+			"Mage Hand",
 			"Cure Wounds",
 			"Speak With Animals",
 			"Thunderwave",
 			"Faerie Fire",
-			"Heroism"
-		],
-		"cantrips" : [
-			"Vicious Mockery",
-			"Mage Hand"			
+			"Heroism",
+			"Heat Metal",
+			"Charm Person (Scroll)"
 		],
 		"spellSlots" : {
-			"level1" : 3,
-			"level2" : 0,
+			"level1" : 4,
+			"level2" : 2,
 			"level3" : 0,
 			"level4" : 0,
 			"level5" : 0,
