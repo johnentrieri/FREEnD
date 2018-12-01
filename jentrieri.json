@@ -18,9 +18,10 @@
 		"background": "Entertainer",
 		"alignment": "Chaotic Good",
 		"stats" :{
-			"HP": 16,
-			"maxHP": 16,
-			"hitDie": 3
+			"HP": 20,
+			"maxHP": 22,
+			"hitDie": 3,
+			"armorClass": 13
 		},
 		"abilities": {
 			"strength": 7,
@@ -89,8 +90,8 @@
 		},
 		"currency" : {
 			"platinum" : 0,
-			"gold" : 40,
-			"silver" : 62,
+			"gold" : 96,
+			"silver" : 42,
 			"copper" : 73
 		},
 		"inventory" :  [
@@ -112,7 +113,7 @@
 			{ "item" : "Torch", "qty" : 1, "equipped": false },
 			{ "item" : "Healer's Kit", "qty" : 2, "equipped": false },
 			{ "item" : "Shawm", "qty" : 1, "equipped": false },
-			{ "item" : "Rice (1 lb)", "qty" : 4, "equipped": false },
+			{ "item" : "Rice (1 lb)", "qty" : 3, "equipped": false },
 			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false }
 		],
 		"spells" : [

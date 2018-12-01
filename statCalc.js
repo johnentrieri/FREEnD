@@ -31,11 +31,10 @@ function statCalc(data, spellData, itemData) {
 		//TODO - Languages
 	
 	//TODO - Hard:
-		//TODO - Max Spell Slots
 		//TODO - armorClass
 		//TODO - encumberance
-		//TODO - spells
-		//TODO - cantrips
+		//TODO - all spells
+		//TODO - all cantrips
 	
 	//Speed
 	switch(data.character.race) {
@@ -426,6 +425,249 @@ function statCalc(data, spellData, itemData) {
 			tempAbility.name = "Cutting Words";
 			tempAbility.description = "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed.";
 			calcData.classAbilities.push(tempAbility);
+		}
+	}
+
+	//Max Spell Slots
+	if (data.character.class == "Bard") {
+		if (data.character.level == 1) {
+			calcData.maxSpellSlots.level1 = 2;
+			calcData.maxSpellSlots.level2 = 0;
+			calcData.maxSpellSlots.level3 = 0;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 2) {
+			calcData.maxSpellSlots.level1 = 3;
+			calcData.maxSpellSlots.level2 = 0;
+			calcData.maxSpellSlots.level3 = 0;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 3) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 2;
+			calcData.maxSpellSlots.level3 = 0;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 4) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 0;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 5) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 2;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 6) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 0;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 7) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 1;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 8) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 2;
+			calcData.maxSpellSlots.level5 = 0;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 9) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 1;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 10) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 0;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 11) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 12) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 0;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 13) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 14) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 0;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 15) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 16) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 0;
+		}
+
+		if (data.character.level == 17) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 1;
+		}
+
+		if (data.character.level == 18) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 3;
+			calcData.maxSpellSlots.level6 = 1;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 1;
+		}
+
+		if (data.character.level == 19) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 2;
+			calcData.maxSpellSlots.level7 = 1;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 1;
+		}
+
+		if (data.character.level == 20) {
+			calcData.maxSpellSlots.level1 = 4;
+			calcData.maxSpellSlots.level2 = 3;
+			calcData.maxSpellSlots.level3 = 3;
+			calcData.maxSpellSlots.level4 = 3;
+			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level6 = 2;
+			calcData.maxSpellSlots.level7 = 2;
+			calcData.maxSpellSlots.level8 = 1;
+			calcData.maxSpellSlots.level9 = 1;
 		}
 	}
 	
