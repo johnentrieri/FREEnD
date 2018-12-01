@@ -17,6 +17,7 @@
 		"weight": "37 lbs",
 		"background": "Entertainer",
 		"alignment": "Chaotic Good",
+		"languages": "Common, Halfling",
 		"stats" :{
 			"HP": 20,
 			"maxHP": 22,

@@ -25,16 +25,19 @@ function statCalc(data, spellData, itemData) {
 	calcData.totalCurrency += data.character.currency.copper * 0.01;
 	
 	//TODO - Easy:
-		//TODO - maxSpellSlots
-		//TODO - Racial Abilities
-		//TODO - Background Abilities
 		//TODO - Languages
 	
 	//TODO - Hard:
 		//TODO - armorClass
 		//TODO - encumberance
-		//TODO - all spells
-		//TODO - all cantrips
+
+
+	//TODO - Big Data:
+		//TODO - All Spells
+		//TODO - All Cantrips
+		//TODO - All Items
+		//TODO - All Racial Abilities
+		//TODO - All Background Abilities
 	
 	//Speed
 	switch(data.character.race) {
