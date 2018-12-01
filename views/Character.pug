@@ -65,27 +65,45 @@ html
 						p
 							b Strength: 
 							= data.base.character.abilities.strength
-							= " (" + data.calculated.modifier.strength + ')'			
+							= " ("
+							- if (data.calculated.modifier.strength >= 0)
+								= "+"
+							= data.calculated.modifier.strength + ')'			
 						p
 							b Dexterity: 
 							= data.base.character.abilities.dexterity
-							= " (" + data.calculated.modifier.dexterity + ')'			
+							= " ("
+							- if (data.calculated.modifier.dexterity >= 0)
+								= "+"
+							= data.calculated.modifier.dexterity + ')'			
 						p
 							b Constitution: 
 							= data.base.character.abilities.constitution
-							= " (" + data.calculated.modifier.constitution + ')'			
+							= " ("
+							- if (data.calculated.modifier.constitution >= 0)
+								= "+"
+							= data.calculated.modifier.constitution + ')'			
 						p
 							b Intelligence: 
 							= data.base.character.abilities.intelligence
-							= " (" + data.calculated.modifier.intelligence + ')'			
+							= " ("
+							- if (data.calculated.modifier.intelligence >= 0)
+								= "+"
+							= data.calculated.modifier.intelligence + ')'			
 						p
 							b Wisdom: 
 							= data.base.character.abilities.wisdom
-							= " (" + data.calculated.modifier.wisdom + ')'			
+							= " ("
+							- if (data.calculated.modifier.wisdom >= 0)
+								= "+"
+							= data.calculated.modifier.wisdom + ')'			
 						p
 							b Charisma: 
 							= data.base.character.abilities.charisma
-							= " (" + data.calculated.modifier.charisma + ')'
+							= " ("
+							- if (data.calculated.modifier.charisma >= 0)
+								= "+"
+							= data.calculated.modifier.charisma + ')'
 
 					div(class="col-lg-3")
 
@@ -114,7 +132,7 @@ html
 						
 						p
 							b Proficiency Bonus: 
-							= data.calculated.proficiencyBonus
+							= "+" + data.calculated.proficiencyBonus
 							
 						p
 							b Speed: 
@@ -126,11 +144,11 @@ html
 							
 						p
 							b Initiative Bonus: 
-							= data.calculated.initiative
+							= "+" + data.calculated.initiative
 							
 						p
 							b Spell Attack Bonus: 
-							= data.calculated.spellAttackBonus
+							= "+" + data.calculated.spellAttackBonus
 							
 						p
 							b Spell Save DC: 
@@ -141,130 +159,238 @@ html
 						h3 Skill Checks
 
 						p
-							- if (data.base.character.checkProficiency.acrobatics)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.acrobatics)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.acrobatics)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Acrobatics: 
+							- if (data.calculated.check.acrobatics >= 0)
+								= "+"
 							= data.calculated.check.acrobatics
 						p
-							- if (data.base.character.checkProficiency.animalHandling)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.animalHandling)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.animalHandling)
+								b &#x2605
+							-else
+								b &#x2003&#x200A
 							b Animal Handling: 
+							- if (data.calculated.check.animalHandling >= 0)
+								= "+"
 							= data.calculated.check.animalHandling
 						p
-							- if (data.base.character.checkProficiency.arcana)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.arcana)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.arcana)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Arcana: 
+							- if (data.calculated.check.arcana >= 0)
+								= "+"
 							= data.calculated.check.arcana
 						p
-							- if (data.base.character.checkProficiency.athletics)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.athletics)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.athletics)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Athletics: 
+							- if (data.calculated.check.athletics >= 0)
+								= "+"
 							= data.calculated.check.athletics
 						p
-							- if (data.base.character.checkProficiency.deception)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.deception)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.deception)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Deception: 
+							- if (data.calculated.check.deception >= 0)
+								= "+"
 							= data.calculated.check.deception
 						p
-							- if (data.base.character.checkProficiency.history)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.history)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.history)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b History: 
+							- if (data.calculated.check.history >= 0)
+								= "+"
 							= data.calculated.check.history
 						p
-							- if (data.base.character.checkProficiency.insight)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.insight)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.insight)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Insight: 
+							- if (data.calculated.check.insight >= 0)
+								= "+"
 							= data.calculated.check.insight
 						p
-							- if (data.base.character.checkProficiency.intimidation)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.intimidation)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.intimidation)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Intimidation: 
+							- if (data.calculated.check.intimidation >= 0)
+								= "+"
 							= data.calculated.check.intimidation
 						p
-							- if (data.base.character.checkProficiency.investigation)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.investigation)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.investigation)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Investigation: 
+							- if (data.calculated.check.investigation >= 0)
+								= "+"
 							= data.calculated.check.investigation
 						p
-							- if (data.base.character.checkProficiency.medicine)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.medicine)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.medicine)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Medicine: 
+							- if (data.calculated.check.medicine >= 0)
+								= "+"
 							= data.calculated.check.medicine
 						p
-							- if (data.base.character.checkProficiency.nature)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.nature)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.nature)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Nature: 
+							- if (data.calculated.check.nature >= 0)
+								= "+"
 							= data.calculated.check.nature
 						p
-							- if (data.base.character.checkProficiency.perception)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.perception)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.perception)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Perception: 
+							- if (data.calculated.check.perception >= 0)
+								= "+"
 							= data.calculated.check.perception
 						p
-							- if (data.base.character.checkProficiency.performance)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.performance)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.performance)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Performance: 
+							- if (data.calculated.check.performance >= 0)
+								= "+"
 							= data.calculated.check.performance
 						p
-							- if (data.base.character.checkProficiency.persuasion)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.persuasion)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.persuasion)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Persuasion: 
+							- if (data.calculated.check.persuasion >= 0)
+								= "+"
 							= data.calculated.check.persuasion
 						p
-							- if (data.base.character.checkProficiency.religion)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.religion)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.religion)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Religion: 
+							- if (data.calculated.check.religion >= 0)
+								= "+"
 							= data.calculated.check.religion
 						p
-							- if (data.base.character.checkProficiency.sleight)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.sleight)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.sleight)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Sleight of Hand: 
+							- if (data.calculated.check.sleight >= 0)
+								= "+"
 							= data.calculated.check.sleight
 						p
-							- if (data.base.character.checkProficiency.stealth)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.stealth)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.stealth)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Stealth: 
+							- if (data.calculated.check.stealth >= 0)
+								= "+"
 							= data.calculated.check.stealth
 						p
-							- if (data.base.character.checkProficiency.survival)
-								b &#x2605 
 							- if (data.base.character.bard.expertise.survival)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
+							- if (data.base.character.checkProficiency.survival)
+								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Survival: 
+							- if (data.calculated.check.survival >= 0)
+								= "+"
 							= data.calculated.check.survival
 
 					div(class="col-lg-3")
@@ -273,21 +399,33 @@ html
 
 						p
 							b Strength: 
+							- if (data.calculated.check.strength >= 0)
+								= "+"
 							= data.calculated.check.strength
 						p
 							b Dexterity: 
+							- if (data.calculated.check.dexterity >= 0)
+								= "+"
 							= data.calculated.check.dexterity
 						p
 							b Constitution: 
+							- if (data.calculated.check.constitution >= 0)
+								= "+"
 							= data.calculated.check.constitution
 						p
 							b Intelligence: 
+							- if (data.calculated.check.intelligence >= 0)
+								= "+"
 							= data.calculated.check.intelligence
 						p
 							b Wisdom: 
+							- if (data.calculated.check.wisdom >= 0)
+								= "+"
 							= data.calculated.check.wisdom
 						p
 							b Charisma: 
+							- if (data.calculated.check.charisma >= 0)
+								= "+"
 							= data.calculated.check.charisma
 
 						br
@@ -297,32 +435,56 @@ html
 						p
 							- if (data.base.character.saveProficiency.strength)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Strength: 
+							- if (data.calculated.save.strength >= 0)
+								= "+"
 							= data.calculated.save.strength
 						p
 							- if (data.base.character.saveProficiency.dexterity)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Dexterity: 
+							- if (data.calculated.save.dexterity >= 0)
+								= "+"
 							= data.calculated.save.dexterity
 						p
 							- if (data.base.character.saveProficiency.constitution)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Constitution: 
+							- if (data.calculated.save.constitution >= 0)
+								= "+"
 							= data.calculated.save.constitution
 						p
 							- if (data.base.character.saveProficiency.intelligence)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Intelligence: 
+							- if (data.calculated.save.intelligence >= 0)
+								= "+"
 							= data.calculated.save.intelligence
 						p
 							- if (data.base.character.saveProficiency.wisdom)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Wisdom: 
+							- if (data.calculated.save.wisdom >= 0)
+								= "+"
 							= data.calculated.save.wisdom
 						p
 							- if (data.base.character.saveProficiency.charisma)
 								b &#x2605 
+							-else
+								b &#x2003&#x200A
 							b Charisma: 
+							- if (data.calculated.save.charisma >= 0)
+								= "+"
 							= data.calculated.save.charisma
 
 		include includes/bootjs.pug

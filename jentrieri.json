@@ -115,7 +115,8 @@
 			{ "item" : "Healer's Kit", "qty" : 2, "equipped": false },
 			{ "item" : "Shawm", "qty" : 1, "equipped": false },
 			{ "item" : "Rice (1 lb)", "qty" : 3, "equipped": false },
-			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false }
+			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false },
+			{ "item" : "Carnelian", "qty" : 1, "equipped": false }
 		],
 		"spells" : [
 			"Vicious Mockery",

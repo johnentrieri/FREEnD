@@ -14,49 +14,82 @@ html
 				
 					div(class="col-lg-3")
 
+						h3 Combat Statistics
+
+						p
+							b Health Points: 
+							= data.base.character.stats.HP + " / " + data.base.character.stats.maxHP
+
+						p
+							b Armor Class: 
+							= data.base.character.stats.armorClass
+						
+						p
+							b Speed: 
+							= data.calculated.speed
+							
+						p
+							b Initiative Bonus: 
+							= "+" + data.calculated.initiative
+							
+						p
+							b Spell Attack Bonus: 
+							= "+" + data.calculated.spellAttackBonus
+							
+						p
+							b Spell Save DC: 
+							= data.calculated.spellSaveDC
+						
+						p
+							b Bardic Inspiration: 
+							= data.base.character.bard.bardicInspiration + " / " + data.calculated.bard.maxBardicInspiration
+							= " (" + data.calculated.bard.bardicInspirationDie + ")"
+
+						br
+						
 						h3 Spell Slots
 
-						- if (data.base.character.spellSlots.level1 > 0)
+						- if (data.calculated.maxSpellSlots.level1 > 0)
 							p
 								b 1st Level: 
 								= data.base.character.spellSlots.level1 + " / " + data.calculated.maxSpellSlots.level1
 
-						- if (data.base.character.spellSlots.level2 > 0)
+						- if (data.calculated.maxSpellSlots.level2 > 0)
 							p
 								b 2nd Level: 
 								= data.base.character.spellSlots.level2 + " / " + data.calculated.maxSpellSlots.level2
 
-						- if (data.base.character.spellSlots.level3 > 0)
+						- if (data.calculated.maxSpellSlots.level3 > 0)
 							p
 								b 3rd Level: 
 								= data.base.character.spellSlots.level3 + " / " + data.calculated.maxSpellSlots.level3
 
-						- if (data.base.character.spellSlots.level4 > 0)
+						- if (data.calculated.maxSpellSlots.level4 > 0)
 							p
 								b 4th Level: 
 								= data.base.character.spellSlots.level4 + " / " + data.calculated.maxSpellSlots.level4
 
-						- if (data.base.character.spellSlots.level5 > 0)
+						- if (data.calculated.maxSpellSlots.level5 > 0)
 							p
 								b 5th Level: 
 								= data.base.character.spellSlots.level5 + " / " + data.calculated.maxSpellSlots.level5
 
-						- if (data.base.character.spellSlots.level6 > 0)
+						- if (data.calculated.maxSpellSlots.level6 > 0)
 							p
 								b 6th Level: 
 								= data.base.character.spellSlots.level6 + " / " + data.calculated.maxSpellSlots.level6
 
-						- if (data.base.character.spellSlots.level7 > 0)
+						- if (data.calculated.maxSpellSlots.level7 > 0)
 							p
 								b 7th Level: 
 								= data.base.character.spellSlots.level7 + " / " + data.calculated.maxSpellSlots.level7
 
-						- if (data.base.character.spellSlots.level8 > 0)
+						- if (data.calculated.maxSpellSlots.level8 > 0)
 							p
 								b 8th Level: 
 								= data.base.character.spellSlots.level8 + " / " + data.calculated.maxSpellSlots.level8
 
-						- if (data.base.character.spellSlots.level9 > 0)
+						- if (data.calculated.maxSpellSlots.level9 > 0)
 							p
 								b 9th Level: 
 								= data.base.character.spellSlots.level9 + " / " + data.calculated.maxSpellSlots.level9
@@ -108,6 +141,23 @@ html
 											td= data.calculated.inventory[i].damage
 											td= data.calculated.inventory[i].properties
 											//td= data.calculated.inventory[i].equipped											
+
+						br
+
+						h3 Ammunition
+
+						div(class="table-responsive")
+
+							table(class="table table-striped table-sm")
+								thead
+									tr
+										th Item 
+										th Quantity 
+								- for (var i = 0; i < data.calculated.inventory.length; i++) 
+									if (data.calculated.inventory[i].subtype == 'Ammunition')
+										tr
+											td= data.calculated.inventory[i].item
+											td= data.calculated.inventory[i].qty										
 
 						br
 

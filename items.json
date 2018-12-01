@@ -25,7 +25,7 @@
 	
 	{	
 		"item" : "Arrows",
-		"type": "Ammunition",
+		"type": "Adventuring Gear",
 		"subtype" : "Ammunition",
 		"cost" : 0.05,
 		"weight" : 0.05
@@ -331,6 +331,14 @@
 		"type": "Tool",
 		"subtype" : "Musical Instrument",
 		"cost" : 2,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Carnelian",
+		"type": "Adventuring Gear",
+		"subtype" : "Semi-Precious Stone",
+		"cost" : 50,
 		"weight" : 1
 	}
 	

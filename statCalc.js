@@ -24,9 +24,6 @@ function statCalc(data, spellData, itemData) {
 	calcData.totalCurrency += data.character.currency.silver * 0.1;
 	calcData.totalCurrency += data.character.currency.copper * 0.01;
 	
-	//TODO - Easy:
-		//TODO - Languages
-	
 	//TODO - Hard:
 		//TODO - armorClass
 		//TODO - encumberance
@@ -68,6 +65,8 @@ function statCalc(data, spellData, itemData) {
 	else if (data.character.level <= 16) { calcData.proficiencyBonus = 5}
 	else if (data.character.level <= 20) { calcData.proficiencyBonus = 6}
 	else { calcData.proficiencyBonus = 6};
+
+	calcData.halfProficiency = Math.floor(calcData.proficiencyBonus / 2);
 		
 	//Ability Modifiers
 	calcData.modifier.strength = Math.floor((data.character.abilities.strength - 10) / 2);
@@ -78,13 +77,13 @@ function statCalc(data, spellData, itemData) {
 	calcData.modifier.charisma = Math.floor((data.character.abilities.charisma - 10) / 2);
 	
 	//Initiative
-	if (calcData.bard.jackOfAllTrades) {calcData.initiative = calcData.modifier.dexterity + (calcData.proficiencyBonus/2); }
+	if (calcData.bard.jackOfAllTrades) {calcData.initiative = calcData.modifier.dexterity + calcData.halfProficiency; }
 	else { calcData.initiative = calcData.modifier.wisdom; }
 		
 	//Passive Perception
 	if (data.character.checkProficiency.perception) {calcData.passivePerception = 10 + calcData.modifier.wisdom + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.passivePerception = 10 + calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.passivePerception = 10 + calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.passivePerception = 10 + calcData.modifier.wisdom; }
 	};
 	
@@ -121,37 +120,37 @@ function statCalc(data, spellData, itemData) {
 	//Ability Checks
 	if (data.character.checkProficiency.strength) {calcData.check.strength = calcData.modifier.strength + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.strength = calcData.modifier.strength + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.strength = calcData.modifier.strength + calcData.halfProficiency; }
 		else { calcData.check.strength = calcData.modifier.strength; }
 	};
 	
 	if (data.character.checkProficiency.dexterity) { calcData.check.dexterity = calcData.modifier.dexterity + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.dexterity = calcData.modifier.dexterity + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.dexterity = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.dexterity = calcData.modifier.dexterity; }
 	};
 	
 	if (data.character.checkProficiency.constitution) { calcData.check.constitution = calcData.modifier.constitution + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.constitution = calcData.modifier.constitution + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.constitution = calcData.modifier.constitution + calcData.halfProficiency; }
 		else { calcData.check.constitution = calcData.modifier.constitution; }
 	};
 	
 	if (data.character.checkProficiency.intelligence) {calcData.check.intelligence = calcData.modifier.intelligence + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.intelligence = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.intelligence = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.intelligence = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.wisdom) {calcData.check.wisdom = calcData.modifier.wisdom + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.wisdom = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.wisdom = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.wisdom = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.charisma) {calcData.check.charisma = calcData.modifier.charisma + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.charisma = calcData.modifier.charisma + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.charisma = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.charisma = calcData.modifier.charisma; }
 	};
 	
@@ -161,7 +160,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.acrobatics) {calcData.check.acrobatics += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.acrobatics = calcData.modifier.dexterity + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.acrobatics = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.acrobatics = calcData.modifier.dexterity; }
 	};
 	
@@ -170,7 +169,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.animalHandling) {calcData.check.animalHandling += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.animalHandling = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.animalHandling = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.animalHandling = calcData.modifier.wisdom; }
 	};
 	
@@ -179,7 +178,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.arcana) {calcData.check.arcana += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.arcana = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.arcana = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.arcana = calcData.modifier.intelligence; }
 	};
 	
@@ -188,7 +187,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.athletics) {calcData.check.athletics += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.athletics = calcData.modifier.strength + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.athletics = calcData.modifier.strength + calcData.halfProficiency; }
 		else { calcData.check.athletics = calcData.modifier.strength; }
 	};
 	
@@ -197,7 +196,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.deception) {calcData.check.deception += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.deception = calcData.modifier.charisma + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.deception = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.deception = calcData.modifier.charisma; }
 	};
 	
@@ -206,7 +205,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.history) {calcData.check.history += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.history = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.history = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.history = calcData.modifier.intelligence; }
 	};
 	
@@ -215,7 +214,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.insight) {calcData.check.insight += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.insight = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.insight = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.insight = calcData.modifier.wisdom; }
 	};
 	
@@ -224,7 +223,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.intimidation) {calcData.check.intimidation += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.intimidation = calcData.modifier.charisma + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.intimidation = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.intimidation = calcData.modifier.charisma; }
 	};
 	
@@ -233,7 +232,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.investigation) {calcData.check.investigation += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.investigation = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.investigation = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.investigation = calcData.modifier.intelligence; }
 	};
 	
@@ -242,7 +241,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.medicine) {calcData.check.medicine += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.medicine = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.medicine = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.medicine = calcData.modifier.wisdom; }
 	};
 	
@@ -251,7 +250,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.nature) {calcData.check.nature += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.nature = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.nature = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.nature = calcData.modifier.intelligence; }
 	};
 	
@@ -260,7 +259,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.perception) {calcData.check.perception += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.perception = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.perception = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.perception = calcData.modifier.wisdom; }
 	};
 	
@@ -269,7 +268,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.performance) {calcData.check.performance += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.performance = calcData.modifier.charisma + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.performance = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.performance = calcData.modifier.charisma; }
 	};
 	
@@ -278,7 +277,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.persuasion) {calcData.check.persuasion += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.persuasion = calcData.modifier.charisma + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.persuasion = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.persuasion = calcData.modifier.charisma; }
 	};
 	
@@ -287,7 +286,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.religion) {calcData.check.religion += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.religion = calcData.modifier.intelligence + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.religion = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.religion = calcData.modifier.intelligence; }
 	};
 	
@@ -296,7 +295,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.sleight) {calcData.check.sleight += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.sleight = calcData.modifier.dexterity + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.sleight = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.sleight = calcData.modifier.dexterity; }
 	};
 	
@@ -305,7 +304,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.stealth) {calcData.check.stealth += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.stealth = calcData.modifier.dexterity + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.stealth = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.stealth = calcData.modifier.dexterity; }
 	};
 	
@@ -314,7 +313,7 @@ function statCalc(data, spellData, itemData) {
 		if (data.character.bard.expertise.survival) {calcData.check.survival += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.survival = calcData.modifier.wisdom + (calcData.proficiencyBonus/2); }
+		if (calcData.bard.jackOfAllTrades) {calcData.check.survival = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.survival = calcData.modifier.wisdom; }
 	};
 		
