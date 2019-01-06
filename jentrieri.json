@@ -19,7 +19,7 @@
 		"alignment": "Chaotic Good",
 		"languages": "Common, Halfling",
 		"stats" :{
-			"HP": 20,
+			"HP": 22,
 			"maxHP": 22,
 			"hitDie": 3,
 			"armorClass": 13
@@ -91,9 +91,9 @@
 		},
 		"currency" : {
 			"platinum" : 0,
-			"gold" : 96,
-			"silver" : 42,
-			"copper" : 73
+			"gold" : 107,
+			"silver" : 78,
+			"copper" : 223
 		},
 		"inventory" :  [
 			{ "item" : "Shortbow", "qty" : 1, "equipped": true},
@@ -106,7 +106,7 @@
 			{ "item" : "Component Pouch", "qty" : 1, "equipped": false },
 			{ "item" : "Backpack", "qty" : 1, "equipped": false },
 			{ "item" : "Bedroll", "qty" : 1, "equipped": false },
-			{ "item" : "Rations (1 day)", "qty" : 5, "equipped": false },
+			{ "item" : "Rations (1 day)", "qty" : 3, "equipped": false },
 			{ "item" : "Waterskin", "qty" : 1, "equipped": false },
 			{ "item" : "Disguise Kit", "qty" : 1, "equipped": false },
 			{ "item" : "Drum", "qty" : 1, "equipped": false },
@@ -114,7 +114,7 @@
 			{ "item" : "Torch", "qty" : 1, "equipped": false },
 			{ "item" : "Healer's Kit", "qty" : 2, "equipped": false },
 			{ "item" : "Shawm", "qty" : 1, "equipped": false },
-			{ "item" : "Rice (1 lb)", "qty" : 3, "equipped": false },
+			{ "item" : "Rice (1 lb)", "qty" : 2, "equipped": false },
 			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false },
 			{ "item" : "Carnelian", "qty" : 1, "equipped": false }
 		],

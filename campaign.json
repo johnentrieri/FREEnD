@@ -1,0 +1,30 @@
+{
+	"npc" : [
+		{
+			"name" : "Black Mamba",
+			"description" : "Bad Dude"
+		},
+
+		{
+			"name" : "Hummus Krust",
+			"description" : "Necromancer from Parfait. Has an army of zombies that he can control. He gave us some gold in exchange for eliminating the orcs nearby (that we were already on a mission to eliminate) and also gave Lance a cool bone tubed item for bringing back a dead orc to use as another zombie. Likes Breakfast."
+		}
+	],
+
+	"places" : [
+		{
+			"name" : "Neverwinter",
+			"description" : "Home"
+		},
+
+		{
+			"name" : "Old Owl Well",
+			"description" : "Ruins of an old watchtower where Hummus Krust, the Necromancer, has been hiding out."
+		},
+
+		{
+			"name" : "Phandalin",
+			"description" : "First main town we visited where..."
+		}
+	]
+}

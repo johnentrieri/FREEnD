@@ -1,0 +1,62 @@
+html
+	head
+		include includes/head.pug
+
+	body
+
+		include includes/navbar.pug
+
+		main(role="main" class="container")
+
+			div(class="container")
+
+				div(class="row")
+				
+					div(class="col-lg-12")
+
+						h3 NPCs
+						- for (var i = 0; i < data.campaign.npc.length; i++)
+								p
+									a(
+										class="btn"
+										data-toggle="collapse"
+										href="#npc-collapse"+i
+										role="button"
+										aria-expanded="false"
+										aria-controls="npc-collapse"+i
+									)
+										= "+"
+									b= data.campaign.npc[i].name
+
+								div(
+									class="collapse"
+									id="npc-collapse"+i
+								)
+									div(class="card card-body")
+										p
+											= data.campaign.npc[i].description
+
+						h3 Places
+						- for (var i = 0; i < data.campaign.places.length; i++)
+								p
+									a(
+										class="btn"
+										data-toggle="collapse"
+										href="#places-collapse"+i
+										role="button"
+										aria-expanded="false"
+										aria-controls="places-collapse"+i
+									)
+										= "+"
+									b= data.campaign.places[i].name
+
+								div(
+									class="collapse"
+									id="places-collapse"+i
+								)
+									div(class="card card-body")
+										p
+											= data.campaign.places[i].description											
+ 
+		include includes/bootjs.pug
+

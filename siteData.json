@@ -8,5 +8,7 @@
 	"tab3Path": "/combat",
 	"tab3Name": "Combat",
 	"tab4Path": "/personal",
-	"tab4Name": "Personal"
+	"tab4Name": "Personal",
+	"tab5Path": "/campaign",
+	"tab5Name": "Campaign"
 }

@@ -12,6 +12,9 @@ function statCalc(data, spellData, itemData) {
 		inventory : [],
 		classAbilities : []
 	};
+
+	//Max Hit Die
+	calcData.maxHitDie = data.character.level
 	
 	//Bard - Jack of All Trades
 	if (data.character.class = 'Bard') {

@@ -47,6 +47,10 @@ spellData = JSON.parse(fileData);
 fileData = fs.readFileSync('items.json','utf8');
 itemData = JSON.parse(fileData);
 
+//Pull Campaign Data from JSON file
+fileData = fs.readFileSync('campaign.json','utf8');
+campaignData = JSON.parse(fileData);
+
 /*
 MongoClient.connect(url, {useNewUrlParser : true}, function(err, client) {
 
@@ -65,7 +69,8 @@ calcData = statCalc(baseData, spellData, itemData);
 data = {
 	base : baseData,
 	calculated : calcData,
-	site: siteData
+	site: siteData,
+	campaign: campaignData
 };
 
 
@@ -88,6 +93,10 @@ app.get(siteData.tab3Path, function(req,res) {
 
 app.get(siteData.tab4Path, function(req,res) {
 	res.render(siteData.tab4Name, data);
+});
+
+app.get(siteData.tab5Path, function(req,res) {
+	res.render(siteData.tab5Name, data);
 });
 
 //Start listening on port 3000
