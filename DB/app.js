@@ -5,8 +5,9 @@ var mongoose = require('mongoose');
 //Server-specific private info
 var private = require('./private/private')
 
-//MongoDB Schemas
+//MongoDB Models
 var Character = require('./models/characterModel');
+var Spell = require('./models/spellModel');
 
 //API Route
 var apiRouter = require('./routes/api');

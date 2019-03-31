@@ -125,7 +125,28 @@ var CharacterSchema = new Schema({
         },
     },
 
-    updatedOn: {
+    spells: [Schema.Types.ObjectId],
+    inventory: [
+        {
+            itemId: {
+                type: Schema.Types.ObjectId,
+                required: true
+            },
+
+            qty: {
+                type: Number,
+                required: true
+            },
+
+            equipped: {
+                type: Boolean,
+                default: false
+            },
+
+        }
+    ],
+
+    createdOn: {
       type: Date,
       default: Date.now
     },
