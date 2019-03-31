@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET */
-router.get('/', function(req, res, next) {
-  res.send("hi");
-});
+var character = require('../controllers/characterController')
+
+router.route('/characters/')
+  .get(character.getAllCharacters);
 
 module.exports = router;
