@@ -14,10 +14,34 @@
 		"cost" : 25,
 		"weight" : 1
 	},
+
+	{	
+		"item" : "Breakfast Meals",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 40,
+		"weight" : 0.1
+	},
+
+	{	
+		"item" : "Alton's Journal",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0,
+		"weight" : 0.5
+	},
 	
 	{	
 		"item" : "Alchemist's Fire (flask)",
 		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 50,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Potion of Poison",
+		"type": "Potion",
 		"subtype" : "N/A",
 		"cost" : 50,
 		"weight" : 1
@@ -207,6 +231,17 @@
 		"weight" : 2,
 		"damage" : "1d6 Piercing",
 		"properties" : "Ammunition (range 80/320), Two-Handed"
+		
+	},
+
+	{	
+		"item" : "Javelin",
+		"type": "Weapon",
+		"subtype" : "Simple Melee",
+		"cost" : 50,
+		"weight" : 2,
+		"damage" : "1d6 Piercing",
+		"properties" : "Thrown (range 30/120)"
 		
 	},
 	
