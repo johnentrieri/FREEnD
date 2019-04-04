@@ -185,13 +185,46 @@ class App extends React.Component {
     );
   }
 
+  createCharacter() {
+    //TODO - Create Character
+  }
+
+  checkPassphrase() {
+    //TODO - Password Logic
+    this.setState({loggedIn : true});
+  }
+
+  renderLoginPage() {
+    return (
+      <main role="main" className="container pt-5 text-center">
+        <div className="row mt-4 pt-5">
+          <div className="col-lg-4"></div>
+          <div className="col-lg-4">
+          <label for="passInput" >Enter Passphrase:</label>
+            <input type="password" className="form-control" id="passInput" placeholder="Passphrase..."></input>
+            <button className="btn btn-primary mt-2 mb-5" onClick={() => this.checkPassphrase()}>Submit</button>
+            <p>OR</p>
+            <button className="btn btn-primary mt-5" onClick={() => this.createCharacter()}>Create Character</button>
+          </div>
+          <div className="col-lg-4"></div>
+        </div>        
+      </main>
+    );
+  }
+
   render() {
     let navbar = this.renderNavBar();
     let body;
-
-    if (this.state.currentPage == 'character') {
-      body = this.renderCharacterPage();
+    if (!this.state.loggedIn) {
+      body = this.renderLoginPage();
+    } 
+    
+    else {
+      if (this.state.currentPage == 'character') {
+        body = this.renderCharacterPage();
+      }
     }
+
     return (
       <div>
         {navbar}

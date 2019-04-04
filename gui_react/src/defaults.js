@@ -1,5 +1,6 @@
 const defaults = {
-    passphrase : "NULL",
+    loggedIn : false,
+    creatingCharacter : false,
     currentPage : "character",
     character : {
       art: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
