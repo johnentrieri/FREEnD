@@ -99,7 +99,7 @@ app.get(siteData.tab5Path, function(req,res) {
 	res.render(siteData.tab5Name, data);
 });
 
-//Start listening on port 3000
-app.listen(3000, function() {
-	console.log('Server Started on Port 3000...');
+//Start listening on port 3002
+app.listen(3002, function() {
+	console.log('Server Started on Port 3002...');
 });
