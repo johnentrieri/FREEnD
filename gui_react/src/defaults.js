@@ -1,6 +1,5 @@
 const defaults = {
     loggedIn : false,
-    creatingCharacter : false,
     currentPage : "character",
     character : {
       art: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
@@ -83,6 +82,7 @@ const defaults = {
         maxHP: -9999,
         hitDieType: "NULL",
         hitDie: -9999,
+        maxHitDie: -9999,
         ac: -9999,
         profBonus: -9999,
         speed: -9999,
