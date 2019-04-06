@@ -5,11 +5,11 @@ const defaults = {
       art: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
       firstName: "First",
       lastName: "Last",
-      level: -9999,
+      level: -1,
       class: "NULL",
       race: "NULL",
       subrace: "NULL",
-      age: -9999,
+      age: -1,
       height: "NULL",
       weight: "NULL",
       background: "NULL",
@@ -18,63 +18,69 @@ const defaults = {
       abilities: {
         strength: {
           label: "Strength",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         },
         dexterity: {
           label: "Dexterity",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         },
         constitution: {
           label: "Constitution",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         },
         intelligence: {
           label: "Intelligence",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         },
         wisdom: {
           label: "Wisdom",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         },
         charisma: {
           label: "Charisma",
-          base: -9999,
+          base: -1,
           modifier: -9999,
           checkModifier: -9999,
           saveModifier: -9999,
           checkProf: false,
           saveProf: false,
-          mods: []
+          checkMods: [],
+          saveMods: []
         }
       },
       stats: {

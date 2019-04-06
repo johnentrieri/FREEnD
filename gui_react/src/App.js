@@ -35,11 +35,11 @@ class App extends React.Component {
   renderNavBar() {
     let characterLink, backpackLink, combatLink, personalLink, campaignLink
 
-    characterLink = <a className={this.state.currentPage == 'character' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'character'})}>Character</a>
-    backpackLink = <a className={this.state.currentPage == 'backpack' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'backpack'})}>Backpack</a>
-    combatLink = <a className={this.state.currentPage == 'combat' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'combat'})}>Combat</a>
-    personalLink = <a className={this.state.currentPage == 'personal' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'personal'})}>Personal</a>
-    campaignLink = <a className={this.state.currentPage == 'campaign' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'campaign'})}>Campaign</a>
+    characterLink = <a className={this.state.currentPage === 'character' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'character'})}>Character</a>
+    backpackLink = <a className={this.state.currentPage === 'backpack' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'backpack'})}>Backpack</a>
+    combatLink = <a className={this.state.currentPage === 'combat' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'combat'})}>Combat</a>
+    personalLink = <a className={this.state.currentPage === 'personal' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'personal'})}>Personal</a>
+    campaignLink = <a className={this.state.currentPage === 'campaign' ? "nav-link active" : "nav-link"} href="#" onClick={() => this.setState({currentPage:'campaign'})}>Campaign</a>
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -57,7 +57,7 @@ class App extends React.Component {
   renderCharacterPanel() {
     return (
       <div className="text-left pt-3">
-        <img className="rounded-circle mb-3" width="140" height="140" src={this.state.character.art}></img>
+        <img className="rounded-circle mb-3" width="140" height="140" alt="" src={this.state.character.art}></img>
         <h2>{this.state.character.firstName + " " + this.state.character.lastName}</h2>
         <p><b>Level: </b>{this.state.character.level}</p>
         <p><b>Class: </b>{this.state.character.class}</p>
@@ -212,7 +212,7 @@ class App extends React.Component {
           <div className="col-sm-1"></div>
           <div className="col-sm-2 text-right"><label>First Name:</label></div>
           <div className="col-sm-3"><input type="text" className="form-control" id="firstName"></input></div>
-          <div className="col-sm-2 text-right"><label for="lastName">Last Name:</label></div>
+          <div className="col-sm-2 text-right"><label>Last Name:</label></div>
           <div className="col-sm-3"><input type="text" className="form-control" id="lastName"></input></div>
           <div className="col-sm-1"></div>
         </div>
@@ -388,7 +388,7 @@ class App extends React.Component {
         <div className="row mt-4 pt-5">
           <div className="col-lg-4"></div>
           <div className="col-lg-4">
-          <label for="passInput" >Enter Passphrase:</label>
+          <label>Enter Passphrase:</label>
             <input type="password" className="form-control" id="passInput" placeholder="Passphrase..."></input>
             <button className="btn btn-primary mt-2 mb-5" onClick={() => this.checkPassphrase()}>Submit</button>
             <p>OR</p>
@@ -396,7 +396,7 @@ class App extends React.Component {
           </div>
           <div className="col-lg-4"></div>
         </div>
-        <div className="modal fade" id="createCharModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="createCharModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -427,7 +427,7 @@ class App extends React.Component {
     } 
     
     else {
-      if (this.state.currentPage == 'character') {
+      if (this.state.currentPage === 'character') {
         body = this.renderCharacterPage();
       }
     }

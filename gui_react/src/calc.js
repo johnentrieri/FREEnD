@@ -9,7 +9,6 @@ function calculateStats(base) {
 		case 'Halfling':
 		case 'Dwarf':
 		case 'Gnome':
-		case 'Halfling':
             calcData.character.stats.speed = 25;
 			break;
 		case 'Dragonborn':
@@ -32,15 +31,53 @@ function calculateStats(base) {
 	else if (calcData.character.level <= 16) { calcData.character.stats.profBonus = 5}
 	else if (calcData.character.level <= 20) { calcData.character.stats.profBonus = 6}
     else { calcData.character.stats.profBonus = 6};
-    
-    //Ability Modifiers
-    calcData.character.abilities.strength.modifier = Math.floor((calcData.character.abilities.strength.base - 10) / 2);
-    calcData.character.abilities.dexterity.modifier = Math.floor((calcData.character.abilities.dexterity.base - 10) / 2);
-    calcData.character.abilities.constitution.modifier = Math.floor((calcData.character.abilities.constitution.base - 10) / 2);
-    calcData.character.abilities.intelligence.modifier = Math.floor((calcData.character.abilities.intelligence.base - 10) / 2);
-    calcData.character.abilities.wisdom.modifier = Math.floor((calcData.character.abilities.wisdom.base - 10) / 2);
-    calcData.character.abilities.charisma.modifier = Math.floor((calcData.character.abilities.charisma.base - 10) / 2);
-    
+
+	//Ability Calculations
+	let abilities = Object.keys(calcData.character.abilities);
+	for (let i=0 ; i< abilities.length; i++) {
+
+		//Ability Modifiers
+		calcData.character.abilities[abilities[i]].modifier = Math.floor((calcData.character.abilities[abilities[i]].base - 10) / 2);
+
+		//Ability Check Proficiency
+		if (calcData.character.abilities[abilities[i]].checkProf) {
+			calcData.character.abilities[abilities[i]].checkMods.push({name: 'Proficiency', val: calcData.character.stats.profBonus});
+		}
+
+		//Saving Throw Proficiency
+		if (calcData.character.abilities[abilities[i]].saveProf) {
+			calcData.character.abilities[abilities[i]].saveMods.push({name: 'Proficiency', val: calcData.character.stats.profBonus});
+		}
+
+		//Ability Check Modifier
+		calcData.character.abilities[abilities[i]].checkModifier = calcData.character.abilities[abilities[i]].modifier;
+		for ( let j=0 ; j < calcData.character.abilities[abilities[i]].checkMods.length ; j++ ) {
+			calcData.character.abilities[abilities[i]].checkModifier += calcData.character.abilities[abilities[i]].checkMods[j].val;
+		}
+
+		//Saving Throw Modifier
+		calcData.character.abilities[abilities[i]].saveModifier = calcData.character.abilities[abilities[i]].modifier;
+		for ( let j=0 ; j < calcData.character.abilities[abilities[i]].saveMods.length ; j++ ) {
+			calcData.character.abilities[abilities[i]].saveModifier += calcData.character.abilities[abilities[i]].saveMods[j].val;
+		}
+	}
+
+	let skills = Object.keys(calcData.character.skills);
+	for (let i=0 ; i< skills.length; i++) {
+
+		//Skill Proficiency
+		if (calcData.character.skills[skills[i]].proficiency) {
+			calcData.character.skills[skills[i]].mods.push({name: 'Proficiency', val: calcData.character.stats.profBonus});
+		}
+
+		//Skill Modifier
+		let primeStat = calcData.character.skills[skills[i]].primary.toLowerCase();		
+		calcData.character.skills[skills[i]].modifier = calcData.character.abilities[primeStat].modifier;
+		for ( let j=0 ; j < calcData.character.skills[skills[i]].mods.length ; j++ ) {
+			calcData.character.skills[skills[i]].modifier += calcData.character.skills[skills[i]].mods[j].val;
+		}
+	}
+
     //Spell Attack Bonus & Spell Save DC
 	switch(calcData.character.class) {
 		case 'Barbarian':
@@ -66,8 +103,12 @@ function calculateStats(base) {
 		case 'Monk':
 		default:
             calcData.character.stats.spellAtkBonus = 0;
-            calcData.character.stats.spellSaveDC = 0;
-    }
+			calcData.character.stats.spellSaveDC = 0;
+	}
+
+
+	   
+	   
 
 
 
