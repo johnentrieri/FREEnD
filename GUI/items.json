@@ -6,6 +6,14 @@
 		"cost" : 2,
 		"weight" : 2
 	},
+
+	{	
+		"item" : "Silver Goblet with Moonstones",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},
 	
 	{	
 		"item" : "Acid (vial)",
@@ -25,6 +33,14 @@
 
 	{	
 		"item" : "Alton's Journal",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0,
+		"weight" : 0.5
+	},
+
+	{	
+		"item" : "Wendy's Blue Ribbon",
 		"type": "Adventuring Gear",
 		"subtype" : "N/A",
 		"cost" : 0,

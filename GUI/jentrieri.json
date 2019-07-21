@@ -67,7 +67,7 @@
 			"survival": false
 		},
 		"bard" : {
-			"bardicInspiration" : 0,
+			"bardicInspiration" : 3,
 			"expertise": {
 				"acrobatics": false,
 				"animalHandling": false,
@@ -91,13 +91,13 @@
 		},
 		"currency" : {
 			"platinum" : 0,
-			"gold" : 122,
-			"silver" : 78,
+			"gold" : 140,
+			"silver" : 178,
 			"copper" : 223
 		},
 		"inventory" :  [
 			{ "item" : "Shortbow", "qty" : 1, "equipped": true},
-			{ "item" : "Arrows", "qty" : 54 , "equipped": false},
+			{ "item" : "Arrows", "qty" : 53 , "equipped": false},
 			{ "item" : "Dagger", "qty" : 1, "equipped": true },
 			{ "item" : "Javelin", "qty" : 1, "equipped": true },
 			{ "item" : "Leather Armor", "qty" : 1, "equipped": true},
@@ -119,7 +119,10 @@
 			{ "item" : "Scroll of Charm Person", "qty" : 1, "equipped": false },
 			{ "item" : "Breakfast Meals", "qty" : 12, "equipped": false },
 			{ "item" : "Alton's Journal", "qty" : 1, "equipped": false },
-			{ "item" : "Potion of Poison", "qty" : 1, "equipped": false }
+			{ "item" : "Potion of Poison", "qty" : 1, "equipped": false },
+			{ "item" : "Silver Goblet with Moonstones", "qty" : 1, "equipped": false },
+			{ "item" : "Wendy's Blue Ribbon", "qty" : 1, "equipped" : false}
+			
 		],
 		"spells" : [
 			"Vicious Mockery",
@@ -134,7 +137,7 @@
 		],
 		"spellSlots" : {
 			"level1" : 4,
-			"level2" : 1,
+			"level2" : 2,
 			"level3" : 0,
 			"level4" : 0,
 			"level5" : 0,
