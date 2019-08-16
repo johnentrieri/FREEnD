@@ -208,8 +208,8 @@ class App extends React.Component {
         <div className="row mt-4 pt-5">
           <div className="col-lg-4"></div>
           <div className="col-lg-4">
-          <label>Enter Passphrase:</label>
-            <input type="password" className="form-control" id="passInput" placeholder="Passphrase..."></input>
+            <input type="text" className="form-control" id="userInput" placeholder="Username..."></input>
+            <input type="password" className="form-control mt-2" id="passInput" placeholder="Password..."></input>
             <button className="btn btn-primary mt-2 mb-5" onClick={() => this.checkPassphrase()}>Submit</button>
             <p>OR</p>
             <button className="btn btn-primary mt-5"data-toggle="modal" data-target="#createCharModal">Create Character</button>

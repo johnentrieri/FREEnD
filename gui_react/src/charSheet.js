@@ -34,14 +34,14 @@ class CharacterSheetForm extends React.Component {
         </div>
         <div className="form-group text-left row">
           <div className="col-sm-1"></div>
-          <div className="col-sm-2 text-right"><label>Passphrase:</label></div>
-          <div className="col-sm-5"><input type="password" className="form-control" id="passphrase"></input></div>
+          <div className="col-sm-2 text-right"><label>Password:</label></div>
+          <div className="col-sm-5"><input type="password" className="form-control" id="password"></input></div>
           <div className="col-sm-3"></div>
         </div>
         <div className="form-group text-left row">
           <div className="col-sm-1"></div>
-          <div className="col-sm-2 text-right"><label>Confirm Passphrase:</label></div>
-          <div className="col-sm-5"><input type="password" className="form-control" id="confirmPassphrase"></input></div>
+          <div className="col-sm-2 text-right"><label>Confirm Password:</label></div>
+          <div className="col-sm-5"><input type="password" className="form-control" id="confirmPassword"></input></div>
           <div className="col-sm-3"></div>
         </div>
         <div className="form-group text-center row">
