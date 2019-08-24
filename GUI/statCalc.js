@@ -3,21 +3,23 @@ function statCalc(data, spellData, itemData) {
 	//Calculated Return Data Structure
 	calcData = {
 		modifier : {},		
-		bard : {},		
+		bard : {},
+		cleric: {},	
 		check : {},		
 		save : {},
 		maxSpellSlots: {},
 		spells : [],
 		totalCurrency : {},
 		inventory : [],
-		classAbilities : []
+		classAbilities : [],
+		raceAbilities: []
 	};
 
 	//Max Hit Die
 	calcData.maxHitDie = data.character.level
 	
 	//Bard - Jack of All Trades
-	if (data.character.class = 'Bard') {
+	if (data.character.class == 'Bard') {
 		if (data.character.level >= 2) { calcData.bard.jackOfAllTrades = true; }
 	}
 
@@ -52,6 +54,7 @@ function statCalc(data, spellData, itemData) {
 		case 'Half-Elf':
 		case 'Half-Orc':
 		case 'Human':
+		case 'Tortle':
 		case 'Tiefling':
 			calcData.speed = 30;
 			break;
@@ -80,13 +83,14 @@ function statCalc(data, spellData, itemData) {
 	calcData.modifier.charisma = Math.floor((data.character.abilities.charisma - 10) / 2);
 	
 	//Initiative
-	if (calcData.bard.jackOfAllTrades) {calcData.initiative = calcData.modifier.dexterity + calcData.halfProficiency; }
-	else { calcData.initiative = calcData.modifier.wisdom; }
+	if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.initiative = calcData.modifier.dexterity + calcData.halfProficiency; }
+	else { calcData.initiative = calcData.modifier.dexterity; }
+
 		
 	//Passive Perception
 	if (data.character.checkProficiency.perception) {calcData.passivePerception = 10 + calcData.modifier.wisdom + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.passivePerception = 10 + calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.passivePerception = 10 + calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.passivePerception = 10 + calcData.modifier.wisdom; }
 	};
 	
@@ -123,200 +127,200 @@ function statCalc(data, spellData, itemData) {
 	//Ability Checks
 	if (data.character.checkProficiency.strength) {calcData.check.strength = calcData.modifier.strength + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.strength = calcData.modifier.strength + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.strength = calcData.modifier.strength + calcData.halfProficiency; }
 		else { calcData.check.strength = calcData.modifier.strength; }
 	};
 	
 	if (data.character.checkProficiency.dexterity) { calcData.check.dexterity = calcData.modifier.dexterity + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.dexterity = calcData.modifier.dexterity + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.dexterity = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.dexterity = calcData.modifier.dexterity; }
 	};
 	
 	if (data.character.checkProficiency.constitution) { calcData.check.constitution = calcData.modifier.constitution + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.constitution = calcData.modifier.constitution + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.constitution = calcData.modifier.constitution + calcData.halfProficiency; }
 		else { calcData.check.constitution = calcData.modifier.constitution; }
 	};
 	
 	if (data.character.checkProficiency.intelligence) {calcData.check.intelligence = calcData.modifier.intelligence + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.intelligence = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.intelligence = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.intelligence = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.wisdom) {calcData.check.wisdom = calcData.modifier.wisdom + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.wisdom = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.wisdom = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.wisdom = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.charisma) {calcData.check.charisma = calcData.modifier.charisma + calcData.proficiencyBonus; }
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.charisma = calcData.modifier.charisma + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.charisma = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.charisma = calcData.modifier.charisma; }
 	};
 	
 	//Skill Checks
 	if (data.character.checkProficiency.acrobatics) {
 		calcData.check.acrobatics = calcData.modifier.dexterity + calcData.proficiencyBonus;
-		if (data.character.bard.expertise.acrobatics) {calcData.check.acrobatics += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.acrobatics) {calcData.check.acrobatics += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.acrobatics = calcData.modifier.dexterity + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.acrobatics = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.acrobatics = calcData.modifier.dexterity; }
 	};
 	
 	if (data.character.checkProficiency.animalHandling) { 
 		calcData.check.animalHandling = calcData.modifier.wisdom + calcData.proficiencyBonus;
-		if (data.character.bard.expertise.animalHandling) {calcData.check.animalHandling += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.animalHandling) {calcData.check.animalHandling += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.animalHandling = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.animalHandling = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.animalHandling = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.arcana) {
 		calcData.check.arcana = calcData.modifier.intelligence + calcData.proficiencyBonus;
-		if (data.character.bard.expertise.arcana) {calcData.check.arcana += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.arcana) {calcData.check.arcana += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.arcana = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.arcana = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.arcana = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.athletics) {
 		calcData.check.athletics = calcData.modifier.strength + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.athletics) {calcData.check.athletics += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.athletics) {calcData.check.athletics += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.athletics = calcData.modifier.strength + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.athletics = calcData.modifier.strength + calcData.halfProficiency; }
 		else { calcData.check.athletics = calcData.modifier.strength; }
 	};
 	
 	if (data.character.checkProficiency.deception) {
 		calcData.check.deception = calcData.modifier.charisma + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.deception) {calcData.check.deception += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.deception) {calcData.check.deception += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.deception = calcData.modifier.charisma + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.deception = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.deception = calcData.modifier.charisma; }
 	};
 	
 	if (data.character.checkProficiency.history) {
 		calcData.check.history = calcData.modifier.intelligence + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.history) {calcData.check.history += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.history) {calcData.check.history += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.history = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.history = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.history = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.insight) {
 		calcData.check.insight = calcData.modifier.wisdom + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.insight) {calcData.check.insight += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.insight) {calcData.check.insight += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.insight = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.insight = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.insight = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.intimidation) {
 		calcData.check.intimidation = calcData.modifier.charisma + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.intimidation) {calcData.check.intimidation += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.intimidation) {calcData.check.intimidation += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.intimidation = calcData.modifier.charisma + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.intimidation = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.intimidation = calcData.modifier.charisma; }
 	};
 	
 	if (data.character.checkProficiency.investigation) {
 		calcData.check.investigation = calcData.modifier.intelligence + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.investigation) {calcData.check.investigation += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.investigation) {calcData.check.investigation += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.investigation = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.investigation = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.investigation = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.medicine) {
 		calcData.check.medicine = calcData.modifier.wisdom + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.medicine) {calcData.check.medicine += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.medicine) {calcData.check.medicine += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.medicine = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.medicine = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.medicine = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.nature) {
 		calcData.check.nature = calcData.modifier.intelligence + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.nature) {calcData.check.nature += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.nature) {calcData.check.nature += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.nature = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.nature = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.nature = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.perception) {
 		calcData.check.perception = calcData.modifier.wisdom + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.perception) {calcData.check.perception += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.perception) {calcData.check.perception += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.perception = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.perception = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.perception = calcData.modifier.wisdom; }
 	};
 	
 	if (data.character.checkProficiency.performance) {
 		calcData.check.performance = calcData.modifier.charisma + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.performance) {calcData.check.performance += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.performance) {calcData.check.performance += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.performance = calcData.modifier.charisma + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.performance = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.performance = calcData.modifier.charisma; }
 	};
 	
 	if (data.character.checkProficiency.persuasion) {
 		calcData.check.persuasion = calcData.modifier.charisma + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.persuasion) {calcData.check.persuasion += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.persuasion) {calcData.check.persuasion += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.persuasion = calcData.modifier.charisma + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.persuasion = calcData.modifier.charisma + calcData.halfProficiency; }
 		else { calcData.check.persuasion = calcData.modifier.charisma; }
 	};
 	
 	if (data.character.checkProficiency.religion) {
 		calcData.check.religion = calcData.modifier.intelligence + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.religion) {calcData.check.religion += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.religion) {calcData.check.religion += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.religion = calcData.modifier.intelligence + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.religion = calcData.modifier.intelligence + calcData.halfProficiency; }
 		else { calcData.check.religion = calcData.modifier.intelligence; }
 	};
 	
 	if (data.character.checkProficiency.sleight) {
 		calcData.check.sleight = calcData.modifier.dexterity + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.sleight) {calcData.check.sleight += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.sleight) {calcData.check.sleight += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.sleight = calcData.modifier.dexterity + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.sleight = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.sleight = calcData.modifier.dexterity; }
 	};
 	
 	if (data.character.checkProficiency.stealth) {
 		calcData.check.stealth = calcData.modifier.dexterity + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.stealth) {calcData.check.stealth += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.stealth) {calcData.check.stealth += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.stealth = calcData.modifier.dexterity + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.stealth = calcData.modifier.dexterity + calcData.halfProficiency; }
 		else { calcData.check.stealth = calcData.modifier.dexterity; }
 	};
 	
 	if (data.character.checkProficiency.survival) {
 		calcData.check.survival = calcData.modifier.wisdom + calcData.proficiencyBonus; 
-		if (data.character.bard.expertise.survival) {calcData.check.survival += calcData.proficiencyBonus;}
+		if (data.character.class == "Bard" && data.character.bard.expertise.survival) {calcData.check.survival += calcData.proficiencyBonus;}
 	}
 	else { 
-		if (calcData.bard.jackOfAllTrades) {calcData.check.survival = calcData.modifier.wisdom + calcData.halfProficiency; }
+		if (data.character.class == "Bard" && calcData.bard.jackOfAllTrades) {calcData.check.survival = calcData.modifier.wisdom + calcData.halfProficiency; }
 		else { calcData.check.survival = calcData.modifier.wisdom; }
 	};
 		
@@ -340,12 +344,12 @@ function statCalc(data, spellData, itemData) {
 	else { calcData.save.charisma = calcData.modifier.charisma; };
 
 	//Bard - Max Bardic Inspiration
-	if (data.character.class = 'Bard') {
+	if (data.character.class == 'Bard') {
 		calcData.bard.maxBardicInspiration = calcData.modifier.charisma;
 	}
 
 	//Bard - Bardic Inspiration Die
-	if (data.character.class = 'Bard') {
+	if (data.character.class == 'Bard') {
 		if (data.character.level < 5) {calcData.bard.bardicInspirationDie = "d6";}
 		else if (data.character.level < 10) {calcData.bard.bardicInspirationDie = "d8";}
 		else if (data.character.level < 15) {calcData.bard.bardicInspirationDie = "d10";}
@@ -401,8 +405,26 @@ function statCalc(data, spellData, itemData) {
 		calcData.carryingWeight += calcData.inventory[i].weight;
 	}
 
+	//Race Abilities 
+	if (data.character.race == 'Tortle') {
+		tempAbility = {};
+		tempAbility.name = "Hold Breath";
+		tempAbility.description = "You can hold your breath for up to 1 hour at a time. Tortles aren't natural swimmers, but they can remain underwater for some time before needing to come up for air.";
+		calcData.raceAbilities.push(tempAbility);
+
+		tempAbility = {};
+		tempAbility.name = "Natural Armor";
+		tempAbility.description = "Due to your shell and the shape of your body, you are ill-suited to wearing armor. Your shell provides ample protection, however; it gives you a base AC of 17 (your Dexterity modifier doesn't affect this number). You gain no benefit from wearing armor, but if you are using a shield, you can apply the shield's bonus as normal.";
+		calcData.raceAbilities.push(tempAbility);
+
+		tempAbility = {};
+		tempAbility.name = "Shell Defense";
+		tempAbility.description = "You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.";
+		calcData.raceAbilities.push(tempAbility);
+	}
+
 	//Class Abilities
-	if (data.character.class = 'Bard') {
+	if (data.character.class == 'Bard') {
 		tempAbility = {};
 		tempAbility.name = "Bardic Inspiration";
 		tempAbility.description = "You can inspire others through stirring words or music. To do so, you use a Bonus Action on Your Turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, Attack roll, or saving throw it makes. The creature can wait until after it rolls The D20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a Long Rest. Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.";
@@ -430,6 +452,26 @@ function statCalc(data, spellData, itemData) {
 			tempAbility.name = "Cutting Words";
 			tempAbility.description = "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed.";
 			calcData.classAbilities.push(tempAbility);
+		}
+	} else if (data.character.class == 'Cleric') {
+		if (data.character.level >= 2) {
+			tempAbility = {};
+			tempAbility.name = "Channel Divinity: Turn Undead";
+			tempAbility.description = "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. lt also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.";
+			calcData.classAbilities.push(tempAbility);
+		}
+		if (data.character.cleric.domain == "Life") {
+			tempAbility = {};
+			tempAbility.name = "Disciple of Life";
+			tempAbility.description = "Starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.";
+			calcData.classAbilities.push(tempAbility);
+
+			if (data.character.level >= 2) {
+				tempAbility = {};
+				tempAbility.name = "Channel Divinity: Preserve Life";
+				tempAbility.description = "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured. As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.";
+				calcData.classAbilities.push(tempAbility);
+			}
 		}
 	}
 

@@ -30,7 +30,9 @@ html
 							
 						p
 							b Initiative Bonus: 
-							= "+" + data.calculated.initiative
+							- if (data.calculated.initiative >= 0)
+								= "+" 
+							= data.calculated.initiative
 							
 						p
 							b Spell Attack Bonus: 
@@ -40,10 +42,11 @@ html
 							b Spell Save DC: 
 							= data.calculated.spellSaveDC
 						
-						p
-							b Bardic Inspiration: 
-							= data.base.character.bard.bardicInspiration + " / " + data.calculated.bard.maxBardicInspiration
-							= " (" + data.calculated.bard.bardicInspirationDie + ")"
+						- if (data.base.character.class == "bard")
+							p
+								b Bardic Inspiration: 
+								= data.base.character.bard.bardicInspiration + " / " + data.calculated.bard.maxBardicInspiration
+								= " (" + data.calculated.bard.bardicInspirationDie + ")"
 
 						br
 						

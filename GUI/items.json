@@ -237,7 +237,18 @@
 		"subtype" : "N/A",
 		"cost" : 0.05,
 		"weight" : 2
-	},	
+	},
+
+	{	
+		"item" : "Claws",
+		"type": "Weapon",
+		"subtype" : "Simple Melee",
+		"cost" : 0,
+		"weight" : 0,
+		"damage" : "1d4 + Strength, Slashing",
+		"properties" : "Natural Weapon, Unarmed Strike"
+		
+	},
 
 	{	
 		"item" : "Shortbow",
@@ -247,6 +258,28 @@
 		"weight" : 2,
 		"damage" : "1d6 Piercing",
 		"properties" : "Ammunition (range 80/320), Two-Handed"
+		
+	},
+
+	{	
+		"item" : "Light Crossbow",
+		"type": "Weapon",
+		"subtype" : "Simple Ranged",
+		"cost" : 25,
+		"weight" : 5,
+		"damage" : "1d8 Piercing",
+		"properties" : "Ammunition (range 80/320), Loading, Two-Handed"
+		
+	},
+
+	{	
+		"item" : "Mace",
+		"type": "Weapon",
+		"subtype" : "Simple Melee",
+		"cost" : 5,
+		"weight" : 4,
+		"damage" : "1d6 Bludgeoning",
+		"properties" : ""
 		
 	},
 
@@ -278,6 +311,16 @@
 		"cost" : 10,
 		"weight" : 10,
 		"armorClass" : "11 + Dexterity Modifier",
+		"stealth" : "N/A"
+	},
+
+	{	
+		"item" : "Shield",
+		"type": "Armor",
+		"subtype" : "Shield",
+		"cost" : 10,
+		"weight" : 6,
+		"armorClass" : "2",
 		"stealth" : "N/A"
 	},	
 	
