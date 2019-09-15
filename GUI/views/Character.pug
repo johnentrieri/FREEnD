@@ -115,8 +115,8 @@ html
 
 						p
 							b Hit Die: 
-							= data.base.character.stats.hitDie + " / " + data.calculated.bard.maxBardicInspiration
-							= " (TODO)"
+							= data.base.character.stats.hitDie + " / " + data.calculated.maxHitDie
+							= " (" + data.calculated.hitDice + ")"
 
 						- if (data.base.character.class == "bard")
 							p
@@ -157,6 +157,19 @@ html
 						p
 							b Spell Save DC: 
 							= data.calculated.spellSaveDC
+						
+						h3= data.base.character.class + " Data"
+						
+						p
+							- if (data.base.character.class == "Cleric") 
+								b Channel Divinity: 
+								= data.base.character.cleric.channelDivinity + " / TODO"
+
+							- if (data.base.character.class == "Bard") 
+								b Bardic Inspiration: 
+								= data.base.character.bard.bardicInspiration + " / " + data.calculated.bard.maxBardicInspiration
+								= " (" + data.calculated.bard.bardicInspirationDie + ")"
+
 
 					div(class="col-lg-3")
 

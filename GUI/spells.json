@@ -1,5 +1,41 @@
 [
 	{
+		"spell" : "Spare the Dying",
+		"level" : "0",
+		"school" : "Necromancy Cantrip",
+		"castingTime" : "1 Action",
+		"range" : "Touch",
+		"components" : "V S",
+		"duration" : "Instantaneous",
+		"description" : "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.",
+		"higherLevelDescription" : "N/A"
+	},
+
+	{
+		"spell" : "Sacred Flame",
+		"level" : "0",
+		"school" : "Evocation Cantrip",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V S",
+		"duration" : "Instantaneous",
+		"description" : "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.",
+		"higherLevelDescription" : "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+	},
+
+	{
+		"spell" : "Light",
+		"level" : "0",
+		"school" : "Evocation Cantrip",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V M (a firefly or phosphorescent moss)",
+		"duration" : "1 Hour",
+		"description" : "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
+		"higherLevelDescription" : "N/A"
+	},
+
+	{
 		"spell" : "Vicious Mockery",
 		"level" : "0",
 		"school" : "Enchantment Cantrip",
@@ -24,6 +60,54 @@
 	},
 
 	{
+		"spell" : "Bless",
+		"level" : 1,
+		"school" : "Enchantment",
+		"castingTime" : "1 Action",
+		"range" : "30 Feet",
+		"components" : "V S M (a sprinkling of holy water)",
+		"duration" : "Concentration, up to 1 minute",
+		"description" : "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+	},
+
+	{
+		"spell" : "Bane",
+		"level" : 1,
+		"school" : "Enchantment",
+		"castingTime" : "1 Action",
+		"range" : "30 Feet",
+		"components" : "V S M (a drop of blood)",
+		"duration" : "Concentration, up to 1 minute",
+		"description" : "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+	},
+
+	{
+		"spell" : "Command",
+		"level" : 1,
+		"school" : "Enchantment",
+		"castingTime" : "1 Action",
+		"range" : "60 Feet",
+		"components" : "V",
+		"duration" : "1 Round",
+		"description" : "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
+	},
+
+	{
+		"spell" : "Create or Destroy Water",
+		"level" : 1,
+		"school" : "Transmutation",
+		"castingTime" : "1 Action",
+		"range" : "30 Feet",
+		"components" : "V S M (a drop of water of a few grains of sand if destroying it)",
+		"duration" : "Instantaneous",
+		"description" : "Create Water: You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area. Destroy Water: You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st."
+	},
+
+	{
 		"spell" : "Cure Wounds",
 		"level" : 1,
 		"school" : "Evocation",
@@ -33,6 +117,330 @@
 		"duration" : "Instantaneous",
 		"description" : "A creature you touch regains hit points equal to 1d8 + your spellcasting modifier. This spell has no effect on undead or constructs.",
 		"higherLevelDescription" : "The healing increases by 1d8 for each slot level above 1st. "
+	},
+
+	{
+		"spell" : "Detect Evil and Good",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Detect Magic",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Detect Poison and Disease",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Guiding Bolt",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Healing Word",
+		"level" : 1,
+		"school" : "Evocation",
+		"castingTime" : "1 Bonus Action",
+		"range" : "60 Feet",
+		"components" : "V",
+		"duration" : "Instantaneous",
+		"description" : "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st."
+	},
+
+	{
+		"spell" : "Inflict Wounds",
+		"level" : 1,
+		"school" : "Necromancy",
+		"castingTime" : "1 Action",
+		"range" : "Touch",
+		"components" : "V S",
+		"duration" : "Instantaneous",
+		"description" : "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.",
+		"higherLevelDescription" : "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
+	},
+
+	{
+		"spell" : "Protection from Evil and Good",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Purify Food and Drink",
+		"level" : 1,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Sanctuary",
+		"level" : 1,
+		"school" : "Abjuration",
+		"castingTime" : "1 Bonus Action",
+		"range" : "30 Feet",
+		"components" : "V S M (a small silver mirror)",
+		"duration" : "1 Minute",
+		"description" : "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball. If the warded creature makes an attack or casts a spell that affects an enemy creature, this spell ends.",
+		"higherLevelDescription" : "N/A"
+	},
+
+	{
+		"spell" : "Shield of Faith",
+		"level" : 1,
+		"school" : "Abjuration",
+		"castingTime" : "1 Bonus Action",
+		"range" : "60 Feet",
+		"components" : "V S M",
+		"duration" : "Concentration, up to 10 minutes",
+		"description" : "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+		"higherLevelDescription" : "N/A"
+	},
+
+	{
+		"spell" : "Aid",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Augury",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Blindness/Deafness",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Calm Emotions",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Continual Flame",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Enhance Ability",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Find Traps",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Gentle Repose",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Hold Person",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Lesser Restoration",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Locate Object",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Prayer of Healing",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Protection from Poison",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Silence",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Spiritual Weapon",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Warding Bond",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
+	},
+
+	{
+		"spell" : "Zone of Truth",
+		"level" : 2,
+		"school" : "TBD",
+		"castingTime" : "TBD",
+		"range" : "TBD",
+		"components" : "TBD",
+		"duration" : "TBD",
+		"description" : "TBD",
+		"higherLevelDescription" : "TBD"
 	},
 	
 	{

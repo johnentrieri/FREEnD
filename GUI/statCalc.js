@@ -8,7 +8,8 @@ function statCalc(data, spellData, itemData) {
 		check : {},		
 		save : {},
 		maxSpellSlots: {},
-		spells : [],
+		availSpells : [],
+		preppedSpells : [],
 		totalCurrency : {},
 		inventory : [],
 		classAbilities : [],
@@ -17,6 +18,33 @@ function statCalc(data, spellData, itemData) {
 
 	//Max Hit Die
 	calcData.maxHitDie = data.character.level
+
+	//Hit Dice
+	switch(data.character.class) {
+		case 'Barbarian':
+			calcData.hitDice = "1d12";
+			break;
+		case 'Fighter':
+		case 'Paladin':
+		case 'Ranger':
+			calcData.hitDice = "1d10";
+			break;
+		case 'Bard':
+		case 'Cleric':
+		case 'Druid':
+		case 'Monk':
+		case 'Rogue':
+		case 'Warlock':
+			calcData.hitDice = "1d8";
+			break;	
+		case 'Sorcerer':		
+		case 'Wizard':
+			calcData.hitDice = "1d6";
+			break;
+		default:
+			calcData.hitDice = "1d8";
+			break;
+	}
 	
 	//Bard - Jack of All Trades
 	if (data.character.class == 'Bard') {
@@ -357,10 +385,18 @@ function statCalc(data, spellData, itemData) {
 	}
 	
 	//Spells
-	for (var i = 0; i < data.character.spells.length; i++) {
+	for (var i = 0; i < data.character.preppedSpells.length; i++) {
 		for (var j = 0; j < spellData.length; j++) {
-			if (spellData[j].spell == data.character.spells[i]) {
-				calcData.spells.push(spellData[j]);
+			if (spellData[j].spell == data.character.preppedSpells[i]) {
+				calcData.preppedSpells.push(spellData[j]);
+			}
+		}
+	}
+
+	for (var i = 0; i < data.character.availSpells.length; i++) {
+		for (var j = 0; j < spellData.length; j++) {
+			if (spellData[j].spell == data.character.availSpells[i]) {
+				calcData.availSpells.push(spellData[j]);
 			}
 		}
 	}
@@ -476,7 +512,7 @@ function statCalc(data, spellData, itemData) {
 	}
 
 	//Max Spell Slots
-	if (data.character.class == "Bard") {
+	if ((data.character.class == "Cleric") || (data.character.class == "Bard"))  {
 		if (data.character.level == 1) {
 			calcData.maxSpellSlots.level1 = 2;
 			calcData.maxSpellSlots.level2 = 0;
@@ -698,7 +734,7 @@ function statCalc(data, spellData, itemData) {
 			calcData.maxSpellSlots.level2 = 3;
 			calcData.maxSpellSlots.level3 = 3;
 			calcData.maxSpellSlots.level4 = 3;
-			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level5 = 3;
 			calcData.maxSpellSlots.level6 = 2;
 			calcData.maxSpellSlots.level7 = 1;
 			calcData.maxSpellSlots.level8 = 1;
@@ -710,13 +746,14 @@ function statCalc(data, spellData, itemData) {
 			calcData.maxSpellSlots.level2 = 3;
 			calcData.maxSpellSlots.level3 = 3;
 			calcData.maxSpellSlots.level4 = 3;
-			calcData.maxSpellSlots.level5 = 2;
+			calcData.maxSpellSlots.level5 = 3;
 			calcData.maxSpellSlots.level6 = 2;
 			calcData.maxSpellSlots.level7 = 2;
 			calcData.maxSpellSlots.level8 = 1;
 			calcData.maxSpellSlots.level9 = 1;
 		}
 	}
+	
 	
 	return(calcData);
 }	

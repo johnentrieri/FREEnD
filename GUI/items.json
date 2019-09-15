@@ -339,6 +339,14 @@
 		"cost" : 30,
 		"weight" : 6
 	},
+
+	{	
+		"item" : "Clothes, Common",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.5,
+		"weight" : 3
+	},	
 	
 	{	
 		"item" : "Clothes, Costume",
@@ -346,6 +354,22 @@
 		"subtype" : "N/A",
 		"cost" : 5,
 		"weight" : 4
+	},
+
+	{	
+		"item" : "Mess Kit",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.2,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Tinderbox",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.5,
+		"weight" : 1
 	},	
 	
 	{	
@@ -354,6 +378,22 @@
 		"subtype" : "N/A",
 		"cost" : 25,
 		"weight" : 2
+	},
+
+	{	
+		"item" : "Hempen Rope (50 Feet)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 10
+	},
+
+	{	
+		"item" : "Silken Rope (50 Feet)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 10,
+		"weight" : 5
 	},
 	
 	{	
@@ -387,6 +427,14 @@
 		"cost" : 25,
 		"weight" : 3
 	},
+
+	{
+		"item" : "Herbalism Kit",
+		"type": "Tool",
+		"subtype" : "N/A",
+		"cost" : 5,
+		"weight" : 3
+	},
 	
 	{	
 		"item" : "Drum",
@@ -403,6 +451,15 @@
 		"cost" : 0.05,
 		"weight" : 2
 	},
+
+	{	
+		"item" : "Scroll Case",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},
+	
 	
 	{	
 		"item" : "Torch",
