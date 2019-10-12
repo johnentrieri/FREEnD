@@ -1,13 +1,143 @@
 {
 	"npc" : [
 		{
+			"name" : "Agatha",
+			"description" : "All we know is that she is a Powerful Entity. Atreyu first heard of her when he met Sister Gary at the Shrine of Luck in Phandalin. Sister Gary wanted us to confront Agatha to inquire about the location of a spellbook"
+		},
+
+		{
 			"name" : "Black Mamba",
-			"description" : "Bad Dude"
+			"description" : "Bad Dude. Drow (Dark Elf)."
+		},
+
+		{
+			"name" : "Carp",
+			"description" : "Halfling boy in Phandalin who is friends with Pip. His mother led us to Rudolph to aid in the pursuit of the Cragmaws. He discovered a tunnel somewhere near the Alderleaf Farm that helped us find the Rembrandt's Hideout."
+		},
+		
+		{
+			"name" : "Clark",
+			"description" : "Bug Bear, bad guy who works for the Black Mamba. We killed him in Cragmaw Hideout"
+		},
+
+		{
+			"name" : "Darryn Eaterman",
+			"description" : "Wily old man in Phandalin who hates the Rembrandt hoodlums."
+		},
+
+		{
+			"name" : "Darya",
+			"description" : "Friend of Atreyu & Fauna who we encountered while she was looking for Winnie, their old friend and healer."
+		},
+		
+		{
+			"name" : "Dave Grohl",
+			"description" : "Bug Bear & king of the Cragmaw tribe. He is currently hunting us, either under orders of the Black Mamba or for personal reasons since we steamrolled their hideout."
+		},
+
+		{
+			"name" : "Dominick",
+			"description" : "Our Lord and Savior"
+		},
+
+		{
+			"name" : "Duncan",
+			"description" : "Captive Rembrandt in Phandalin who is also our homeboy."
+		},
+
+		{
+			"name" : "Dyslexia",
+			"description" : "Dragon & Sister to Venomfang who took his lair from him."
+		},
+
+		{
+			"name" : "Esper",
+			"description" : "Zawdust's Cat"
+		},
+
+		{
+			"name" : "Fell Dendrar",
+			"description" : "Woodcarver who worked in Phandalin. Was killed by The Rembrandts."
+		},
+
+		{
+			"name" : "Harbin",
+			"description" : "Pale Human & Town Mayor of Phandalin who was originally kind of an asshole, but has since started to lighten up and be a better leader after the Rembrandts were dealt with"
 		},
 
 		{
 			"name" : "Hummus Krust",
 			"description" : "Necromancer from Parfait. Has an army of zombies that he can control. He gave us some gold in exchange for eliminating the orcs nearby (that we were already on a mission to eliminate) and also gave Lance a cool bone tubed item for bringing back a dead orc to use as another zombie. Likes Breakfast."
+		},
+
+		{
+			"name" : "Iarno Albreck (Glass Staff)",
+			"description" : "Good guy that turned out to be a bad guy. Was part of the Lord's Alliance, but ended up being Glass Staff, leader of the Rembrandts who is also working for the Black Mamba. After defeating him in the Rembrandt's Hideout, he was locked up in Phandalin. Last we heard, he was being transferred to Neverwinter, but had not gotten word that he arrived there."
+		},
+
+		{
+			"name" : "Lorde's Alliance",
+			"description" : "Group of good guys. Known Members are Sildar Hallwinter & Iarno Albreck, but Iarno ended actually being a bad man (Glass Staff)."
+		},
+
+		{
+			"name" : "Nothic",
+			"description" : "Eye Monster who we didn't fight because we beat the Rembrandts too quickly. Likes Meat."
+		},
+
+		{
+			"name" : "Pip",
+			"description" : "Human Boy and son of Toeblinn Stonehill in Phandalin who is also friends with Carp."
+		},
+
+		{
+			"name" : "Rembrandts",
+			"description" : "Bad hoodlum gang in Phandalin led by Glass Staff who is involved with the Black Mamba."
+		},
+
+		{
+			"name" : "Rockseeker Bros",
+			"description" : "Gundren, Tharden, & Nundro, the brothers who discovered Wave Echo Cave. They gave us the initial quest to escort a cart of goods and supplies to Phandalin in exchange for equity in Wave Echo Cave. There whereabouts are currently unknown and we need to find them."
+		},
+
+		{
+			"name" : "Rudolph",
+			"description" : "Gandalf-looking, old white dude, and a friend of Dargor's who is currently residing in Thundertree trying to reinvigorate the land. When we met, he handed me Wendy's Blue Ribbon because he sensed it matched my aura. He gave us directions to Cragmaw Castle and, although he will not tell us the location, he agreed tolead us to Wave Echo Cave."
+		},
+
+		{
+			"name" : "Sildar Hallwinter",
+			"description" : "Member of Lorde's Alliance who we rescued in Cragmaw Hideout. Helped us with the Rembrandts and capturing Glass Staff. He is currently actiing Sheriff / Police Chief of Phandalin."
+		},
+
+		{
+			"name" : "Sister Gary",
+			"description" : "Lives in Phandalin and "
+		},
+
+		{
+			"name" : "Toeblinn Stonehill",
+			"description" : "Innkeep at the Stonehill Inn who's son is Pip."
+		},
+
+		{
+			"name" : "Venomfang",
+			"description" : "Dragon who we encountered in Thundertree, who tricked us and almost wiped us in one hit. We came close to defeating him, but he fled and got away."
+		},
+
+		{
+			"name" : "Winnie",
+			"description" : "A Old Healer & friend to Atreyu, Fauna, and Darya who is lost or has been taken."
+		},
+
+		{
+			"name" : "Yeemik",
+			"description" : "Cragmaw Goblin under Clark's command. We killed him in Cragmaw Hideout."
+		},
+
+		{
+			"name" : "Zawdust",
+			"description" : "Crazy old wizard who led is into a tower of cool puzzles."
 		}
 	],
 
