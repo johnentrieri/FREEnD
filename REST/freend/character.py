@@ -5,39 +5,71 @@ Created on Sat Nov  2 00:24:42 2019
 
 @author: pi
 """
-
 import math
 
 class Character():
     
-    def __init__(self,charData):
-        self.data = charData
+    def __init__(self,charDB,campaign):
+        self.inputData = charDB
+        self.campaign = campaign
         
-        self.getCharacterInfo() 
-        self.calculateStats()      
-        self.calculateAbilities()
-        self.calculateSkills()
-        self.calculateCurrency()
+        self.getCharacterInfo()
+        self.calculateStats()
+        self.populateInventory()
+        self.learnSpells()
         
+        self.classData = { "classAbilities" : [] }        
         
     def getCharacterInfo(self):
-        self.info = {}
-        self.info['id'] = self.data['id']
-        self.info['name'] = self.data['firstName'] + ' ' + self.data['lastName']
-        self.info['level'] = self.data['level']
-        self.info['race'] = self.data['race']
-        self.info['subrace'] = self.data['subrace']
-        self.info['age'] = self.data['age']
+        self.info = {} 
+        self.info['id'] = self.inputData['id']
+        self.info['name'] = self.inputData['firstName'] + ' ' + self.inputData['lastName']
+        self.info['level'] = self.inputData['level']
+        self.info['class'] = self.inputData['class']
+        self.info['race'] = self.inputData['race']
+        self.info['subrace'] = self.inputData['subrace']
+        self.info['age'] = self.inputData['age']
+        self.info['height'] = self.inputData['height']
+        self.info['weight'] = self.inputData['weight']
+        self.info['alignment'] = self.inputData['alignment']
+        self.info['background'] = self.inputData['background']
+        self.info['languages'] = self.inputData['languages']
         
     def calculateStats(self):
         self.stats = {}
+        self.stats['hitDie'] = self.inputData['stats']['hitDie']
+        self.stats['HP'] = self.inputData['stats']['HP']
+        self.stats['maxHP'] = self.inputData['stats']['maxHP']
+        self.stats['armorClass'] = self.inputData['stats']['armorClass']
+        self.stats['spellSlots'] = self.inputData['stats']['spellSlots']
         self.stats['maxHitDie'] = self.info['level']
         self.calculateProficiencyBonus()
         self.calculateSpeed()
+        self.calculateAbilities()
+        self.calculateSkills()
+        
+    def populateInventory(self):
+        self.inventory = {
+                "currency" : {},
+                "weapons" : [],
+                "armor" : [],
+                "items" : []
+        }
+        
+        self.calculateCurrency()
+        self.organizeInventory()
+        
+    def learnSpells(self):
+        self.spells = []
+        
+        for charSpell in self.inputData['spells']:
+            for dbSpell in self.campaign.spells:                
+                if (charSpell == dbSpell['spell']):
+                    self.spells.append(dbSpell)
         
     def calculateCurrency(self):
-        self.currency = self.data['currency']
-        self.currency['total'] = (self.currency['platinum'] * 10.0) + (self.currency['gold'] * 1.0) + (self.currency['silver'] * 0.1) + (self.currency['copper'] * 0.01)
+        self.inventory['currency'] = self.inputData['currency']
+        self.inventory['currency']['total'] = (self.inventory['currency']['platinum'] * 10.0) + (self.inventory['currency']['gold'] * 1.0) + (self.inventory['currency']['silver'] * 0.1) + (self.inventory['currency']['copper'] * 0.01)
     
     def calculateSpeed(self):
         if (self.info['race'] == 'Halfling'):
@@ -76,7 +108,7 @@ class Character():
     
     def calculateAbilities(self):        
         #Create Base Dictionaries
-        self.abilities = {
+        self.stats['abilities'] = {
                 'strength' : {},
                 'dexterity' : {},
                 'constitution' : {},
@@ -86,24 +118,25 @@ class Character():
         }
         
         #Base Ability Score
-        for key in self.abilities.keys():
-            self.abilities[key]['score'] = self.data['abilities'][key]
-            self.abilities[key]['isSaveProf'] = self.data['saveProficiency'][key]
+        for key in self.stats['abilities'].keys():
+            self.stats['abilities'][key]['score'] = self.inputData['abilities'][key]
+            self.stats['abilities'][key]['isSaveProf'] = self.inputData['saveProficiency'][key]
         
             #Base Modifier
-            self.abilities[key]['mod'] = math.floor( (self.abilities[key]['score'] - 10) / 2)
+            self.stats['abilities'][key]['mod'] = math.floor( (self.stats['abilities'][key]['score'] - 10) / 2)
+            self.stats['abilities'][key]['check'] = self.stats['abilities'][key]['mod']
         
             #Save Modifier
-            if (self.abilities[key]['isSaveProf']):
-                self.abilities[key]['save'] = self.abilities[key]['mod'] + self.stats['profBonus']
+            if (self.stats['abilities'][key]['isSaveProf']):
+                self.stats['abilities'][key]['save'] = self.stats['abilities'][key]['mod'] + self.stats['profBonus']
             else:
-                self.abilities[key]['save'] = self.abilities[key]['mod']
+                self.stats['abilities'][key]['save'] = self.stats['abilities'][key]['mod']
                 
     def calculateSkills(self):
         
         #Create Base Dictionaries
         
-        self.skills = {
+        self.stats['skills'] = {
                 'acrobatics' : { 'base' : 'dexterity' },
                 'animalHandling' : { 'base' : 'wisdom' },
                 'arcana' : { 'base' : 'intelligence' },
@@ -124,15 +157,42 @@ class Character():
                 'survival' : { 'base' : 'wisdom' }
         }
         
-        for key in self.skills.keys():
-            baseKey = self.skills[key]['base']
-            self.skills[key]['isCheckProf'] = self.data['checkProficiency'][key]
+        for key in self.stats['skills'].keys():
+            baseKey = self.stats['skills'][key]['base']
+            self.stats['skills'][key]['isCheckProf'] = self.inputData['checkProficiency'][key]
             
-            if (self.skills[key]['isCheckProf']):
-                self.skills[key]['check'] = self.abilities[baseKey]['mod'] + self.stats['profBonus']
+            if (self.stats['skills'][key]['isCheckProf']):
+                self.stats['skills'][key]['check'] = self.stats['abilities'][baseKey]['mod'] + self.stats['profBonus']
             else:
-                self.skills[key]['check'] = self.abilities[baseKey]['mod']
+                self.stats['skills'][key]['check'] = self.stats['abilities'][baseKey]['mod']
                 
-        self.stats['initiative'] = self.abilities['dexterity']['mod']
-        self.stats['passivePerception'] = 10 + self.skills['perception']['check']
+        self.stats['initiative'] = self.stats['abilities']['dexterity']['check']
+        self.stats['passivePerception'] = 10 + self.stats['skills']['perception']['check']
+        
+    def organizeInventory(self):
+        for charItem in self.inputData['inventory']:
+            for dbItem in self.campaign.items:                
+                if (charItem['item'] == dbItem['item']):
+                    tempItem = dbItem
+                    tempItem['quantity'] = charItem['qty']
+                    tempItem['equipped'] = charItem['equipped']
+                    if(tempItem['type'] == 'Weapon'):
+                        self.inventory['weapons'].append(tempItem)
+                    elif (tempItem['type'] == 'Armor'):
+                        self.inventory['armor'].append(tempItem)
+                    else:
+                        self.inventory['items'].append(tempItem)
+                        
+    def getDictionary(self):
+        outputDict = {}
+        outputDict['info'] = self.info
+        outputDict['stats'] = self.stats
+        outputDict['inventory'] = self.inventory
+        outputDict['spells'] = self.spells
+        outputDict['classData'] = self.classData
+        
+        return(outputDict)
+                        
+                    
+        
                 

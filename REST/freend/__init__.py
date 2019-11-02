@@ -7,3 +7,4 @@ Created on Sat Nov 02 11:45:25 2019
 
 from .character import Character
 from .bard import Bard
+from .campaign import Campaign
