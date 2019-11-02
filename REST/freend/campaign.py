@@ -17,3 +17,11 @@ class Campaign():
     def addCharacter(self,charDB):
         if (charDB['class'] == "Bard"):
             self.characters.append(freend.Bard(charDB,self))
+            
+    def getCharacters(self):
+        return(self.characters)
+        
+    def getCharacterByID(self,id):
+        for char in self.characters:
+            if (char.info['id'] == id):
+                return(char)
