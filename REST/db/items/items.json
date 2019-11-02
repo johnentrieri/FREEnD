@@ -1,0 +1,397 @@
+[
+	{	
+		"item" : "Abacus",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 2,
+		"weight" : 2
+	},
+
+	{	
+		"item" : "Silver Goblet with Moonstones",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},
+	
+	{	
+		"item" : "Acid (vial)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 25,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Breakfast Meals",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 40,
+		"weight" : 0.1
+	},
+
+	{	
+		"item" : "Alton's Journal",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0,
+		"weight" : 0.5
+	},
+
+	{	
+		"item" : "Wendy's Blue Ribbon",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0,
+		"weight" : 0.5
+	},
+	
+	{	
+		"item" : "Alchemist's Fire (flask)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 50,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Potion of Poison",
+		"type": "Potion",
+		"subtype" : "N/A",
+		"cost" : 50,
+		"weight" : 1
+	},
+	
+	{	
+		"item" : "Arrows",
+		"type": "Adventuring Gear",
+		"subtype" : "Ammunition",
+		"cost" : 0.05,
+		"weight" : 0.05
+	},
+	
+	{	
+		"item" : "Blowgun Needles",
+		"type": "Adventuring Gear",
+		"subtype" : "Ammunition",
+		"cost" : 0.05,
+		"weight" : 0.05
+	},
+	
+	{	
+		"item" : "Crossbow Bolts",
+		"type": "Adventuring Gear",
+		"subtype" : "Ammunition",
+		"cost" : 0.05,
+		"weight" : 0.075
+	},
+	
+	{	
+		"item" : "Sling Bullets",
+		"type": "Adventuring Gear",
+		"subtype" : "Ammunition",
+		"cost" : 0.002,
+		"weight" : 0.075
+	},
+	
+	{	
+		"item" : "Antitoxin (vial)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 50,
+		"weight" : 0
+	},
+	
+	{	
+		"item" : "Crystal",
+		"type": "Adventuring Gear",
+		"subtype" : "Arcane Focus",
+		"cost" : 10,
+		"weight" : 1
+	},
+	
+	{	
+		"item" : "Orb",
+		"type": "Adventuring Gear",
+		"subtype" : "Arcane Focus",
+		"cost" : 20,
+		"weight" : 3
+	},
+	
+	{	
+		"item" : "Rod",
+		"type": "Adventuring Gear",
+		"subtype" : "Arcane Focus",
+		"cost" : 10,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Staff",
+		"type": "Adventuring Gear",
+		"subtype" : "Arcane Focus",
+		"cost" : 5,
+		"weight" : 4
+	},
+	
+	{	
+		"item" : "Wand",
+		"type": "Adventuring Gear",
+		"subtype" : "Arcane Focus",
+		"cost" : 10,
+		"weight" : 1
+	},
+	
+	{	
+		"item" : "Backpack",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 2,
+		"weight" : 5
+	},
+	
+	{	
+		"item" : "Ball Bearing",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.001,
+		"weight" : 0.002
+	},
+	
+	{	
+		"item" : "Barrel",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 2,
+		"weight" : 70
+	},
+	
+	{	
+		"item" : "Basket",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.4,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Bedroll",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 7
+	},
+	
+	{	
+		"item" : "Bell",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 0
+	},
+	
+	{	
+		"item" : "Blanket",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.5,
+		"weight" : 3
+	},
+	
+	{	
+		"item" : "Block and Tackle",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 5
+	},
+	
+	{	
+		"item" : "Book",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 25,
+		"weight" : 5
+	},
+	
+	{	
+		"item" : "Scroll of Charm Person",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Bottle, Glass",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 2,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Bucket",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.05,
+		"weight" : 2
+	},	
+
+	{	
+		"item" : "Shortbow",
+		"type": "Weapon",
+		"subtype" : "Simple Ranged",
+		"cost" : 25,
+		"weight" : 2,
+		"damage" : "1d6 Piercing",
+		"properties" : "Ammunition (range 80/320), Two-Handed"
+		
+	},
+
+	{	
+		"item" : "Javelin",
+		"type": "Weapon",
+		"subtype" : "Simple Melee",
+		"cost" : 50,
+		"weight" : 2,
+		"damage" : "1d6 Piercing",
+		"properties" : "Thrown (range 30/120)"
+		
+	},
+	
+	{	
+		"item" : "Dagger",
+		"type": "Weapon",
+		"subtype" : "Simple Melee",
+		"cost" : 2,
+		"weight" : 1,
+		"damage" : "1d4 Piercing",
+		"properties" : "Finesse, Light, Thrown (range 20/60)"
+	},	
+	
+	{	
+		"item" : "Leather Armor",
+		"type": "Armor",
+		"subtype" : "Light",
+		"cost" : 10,
+		"weight" : 10,
+		"armorClass" : "11 + Dexterity Modifier",
+		"stealth" : "N/A"
+	},	
+	
+	{	
+		"item" : "Lute",
+		"type": "Tool",
+		"subtype" : "Musical Instrument",
+		"cost" : 35,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Bagpipes",
+		"type": "Tool",
+		"subtype" : "Musical Instrument",
+		"cost" : 30,
+		"weight" : 6
+	},
+	
+	{	
+		"item" : "Clothes, Costume",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 5,
+		"weight" : 4
+	},	
+	
+	{	
+		"item" : "Component Pouch",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 25,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Rations (1 day)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.5,
+		"weight" : 2
+	},	
+
+	{	
+		"item" : "Rice (1 lb)",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 1,
+		"weight" : 1
+	},	
+	
+	{	
+		"item" : "Waterskin",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.2,
+		"weight" : 5
+	},
+	
+	{
+		"item" : "Disguise Kit",
+		"type": "Tool",
+		"subtype" : "N/A",
+		"cost" : 25,
+		"weight" : 3
+	},
+	
+	{	
+		"item" : "Drum",
+		"type": "Tool",
+		"subtype" : "Musical Instrument",
+		"cost" : 6,
+		"weight" : 3
+	},
+	
+	{	
+		"item" : "Flask",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.05,
+		"weight" : 2
+	},
+	
+	{	
+		"item" : "Torch",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 0.01,
+		"weight" : 1
+	},
+	
+	{
+		"item" : "Healer's Kit",
+		"type": "Adventuring Gear",
+		"subtype" : "N/A",
+		"cost" : 5,
+		"weight" : 3
+	},
+	
+	{	
+		"item" : "Shawm",
+		"type": "Tool",
+		"subtype" : "Musical Instrument",
+		"cost" : 2,
+		"weight" : 1
+	},
+
+	{	
+		"item" : "Carnelian",
+		"type": "Adventuring Gear",
+		"subtype" : "Semi-Precious Stone",
+		"cost" : 50,
+		"weight" : 1
+	}
+	
+]
+	
