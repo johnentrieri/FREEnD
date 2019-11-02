@@ -17,8 +17,8 @@ class Bard(Character):
         self.bardicInspiration()
         self.jackOfAllTrades()
         self.songOfRest()
-        self.cuttingWords()
         self.expertise()
+        self.college()
         
         
     def performSpellCalculations(self):
@@ -117,13 +117,6 @@ class Bard(Character):
             tempAbility['name'] = "Song of Rest"
             tempAbility['description'] = "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a Short Rest. If you or any friendly creatures who can hear your Performance regain Hit Points by spending Hit Dice at the end of the Short Rest, each of those creatures regains an extra 1d6 Hit Points. The extra Hit Points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
             self.classData['classAbilities'].append(tempAbility)
-            
-    def cuttingWords(self):
-        if (self.info['level'] >= 3):
-            tempAbility = {}
-            tempAbility['name'] = "Cutting Words"
-            tempAbility['description'] = "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed."
-            self.classData['classAbilities'].append(tempAbility)   
         
     def expertise(self):
         if (self.info['level'] >= 3):
@@ -136,9 +129,23 @@ class Bard(Character):
                 if (self.stats['skills'][key]['isCheckProf']):
                     if(self.inputData['bard']['expertise'][key]):
                         self.stats['skills'][key]['check'] += self.stats['profBonus']
-        
-        
-        
+    
+    def college(self):
+        if (self.info['level'] >= 3):
+            self.classData['college'] = self.inputData['bard']['college']
+            
+            if (self.classData['college'] == "Lore"):
+                #self.bonusProficiencies
+                self.cuttingWords()
+                #self.additionalMagicalSecrets
+                #self.peerlessSkill
+       
+    def cuttingWords(self):
+        if (self.info['level'] >= 3):
+            tempAbility = {}
+            tempAbility['name'] = "Cutting Words"
+            tempAbility['description'] = "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed."
+            self.classData['classAbilities'].append(tempAbility)      
         
         
         

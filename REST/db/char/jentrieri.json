@@ -67,6 +67,7 @@
 			"survival": false
 		},
 		"bard" : {
+			"college" : "Lore",
 			"bardicInspiration" : 3,
 			"expertise": {
 				"acrobatics": false,
