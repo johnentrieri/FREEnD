@@ -6,7 +6,7 @@ Created on Sat Nov  2 00:28:01 2019
 @author: pi
 """
 
-from Character import Character
+from freend import Character
 
 class Bard(Character):
     def __init__(self,charData):
