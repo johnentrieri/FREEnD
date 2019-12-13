@@ -19,7 +19,8 @@ class Character(object):
     def buildCharacter(self):
 
         tempFile = open(self.inputDataFile,'r+')
-        self.inputData = json.loads(tempFile.read())['character']   
+        self.inputData = json.loads(tempFile.read())['character']  
+        tempFile.close() 
         
         self.getCharacterInfo()
         self.calculateStats()
@@ -27,12 +28,42 @@ class Character(object):
         self.learnSpells()
         
         self.classData = { "classAbilities" : [] }
+
+    def modifyCharacterInfo(self,modObject):
+        tempFile = open(self.inputDataFile,'r+')
+        tempData = json.loads(tempFile.read())
+        tempFile.close()
+
+        for key in modObject.keys():
+            if key in tempData['character'].keys():
+                tempData['character'][key] = modObject[key]
+
+        tempFile = open(self.inputDataFile,'w+')
+        tempFile.write(json.dumps(tempData))
+        tempFile.close()
+
+        self.buildCharacter()
+
+    def modifyCharacterStats(self,modObject):
+        tempFile = open(self.inputDataFile,'r+')
+        tempData = json.loads(tempFile.read())
+        tempFile.close()
+
+        for key in modObject.keys():
+            if key in tempData['character']['stats'].keys():
+                tempData['character']['stats'][key] = modObject[key]
+
+        tempFile = open(self.inputDataFile,'w+')
+        tempFile.write(json.dumps(tempData))
+        tempFile.close()
+
+        self.buildCharacter()
         
     def getCharacterInfo(self):
         self.info = {} 
         self.info['id'] = self.inputData['id']
         self.info['name'] = self.inputData['firstName'] + ' ' + self.inputData['lastName']
-        self.info['level'] = self.inputData['level']
+        self.info['level'] = int(self.inputData['level'])
         self.info['class'] = self.inputData['class']
         self.info['race'] = self.inputData['race']
         self.info['subrace'] = self.inputData['subrace']
@@ -45,12 +76,12 @@ class Character(object):
         
     def calculateStats(self):
         self.stats = {}
-        self.stats['hitDie'] = self.inputData['stats']['hitDie']
-        self.stats['HP'] = self.inputData['stats']['HP']
-        self.stats['maxHP'] = self.inputData['stats']['maxHP']
-        self.stats['armorClass'] = self.inputData['stats']['armorClass']
-        self.stats['spellSlots'] = self.inputData['stats']['spellSlots']
+        self.stats['hitDie'] = int(self.inputData['stats']['hitDie'])
         self.stats['maxHitDie'] = self.info['level']
+        self.stats['HP'] = int(self.inputData['stats']['HP'])
+        self.stats['maxHP'] = int(self.inputData['stats']['maxHP'])
+        self.stats['armorClass'] = int(self.inputData['stats']['armorClass'])
+        self.stats['spellSlots'] = self.inputData['stats']['spellSlots']        
         self.calculateProficiencyBonus()
         self.calculateSpeed()
         self.calculateAbilities()
@@ -127,7 +158,7 @@ class Character(object):
         
         #Base Ability Score
         for key in self.stats['abilities'].keys():
-            self.stats['abilities'][key]['score'] = self.inputData['abilities'][key]
+            self.stats['abilities'][key]['score'] = int(self.inputData['abilities'][key])
             self.stats['abilities'][key]['isSaveProf'] = self.inputData['saveProficiency'][key]
         
             #Base Modifier

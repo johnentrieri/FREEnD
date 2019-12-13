@@ -12,14 +12,18 @@ import math
 class Bard(Character):
     def __init__(self,charData,campaign):
         super(Bard,self).__init__(charData,campaign)
-        
+
+        self.buildCharacter() 
+
+    def buildCharacter(self):
+        super(Bard,self).buildCharacter()
+
         self.performSpellCalculations()
         self.bardicInspiration()
         self.jackOfAllTrades()
         self.songOfRest()
         self.expertise()
         self.college()
-        
         
     def performSpellCalculations(self):
         self.calculateMaxSpellSlots()

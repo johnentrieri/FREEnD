@@ -26,17 +26,31 @@ app = flask.Flask(__name__)
 def index():
     return "Welcome!"
 
-@app.route('/characters/')
-def getCharacters():
-    chars = []
-    for char in myCampaign.characters:
-        tmpDict = char.getDictionary()
-        chars.append(tmpDict)
-    #TODO - flask.jsonify does not work with JSON "lists", needs to be an object
-    return flask.jsonify(chars)
+#TODO - flask.jsonify does not work with JSON "lists", needs to be an object
+# @app.route('/characters/')
+# def getCharacters():
+#     chars = []
+#     for char in myCampaign.characters:
+#         tmpDict = char.getDictionary()
+#         chars.append(tmpDict)    
+#     return flask.jsonify(chars)
 
 @app.route('/characters/<int:id>', methods=['GET'])
 def getCharacterByID(id):
+    charData = myCampaign.getCharacterByID(id).getDictionary()
+    return flask.jsonify(charData)
+
+@app.route('/modifyCharacterInfo/<int:id>', methods=['POST'])
+def modifyCharacterInfo(id):
+    modObject = flask.request.form
+    myCampaign.getCharacterByID(id).modifyCharacterInfo(modObject)
+    charData = myCampaign.getCharacterByID(id).getDictionary()
+    return flask.jsonify(charData)
+
+@app.route('/modifyCharacterStats/<int:id>', methods=['POST'])
+def modifyCharacterStats(id):
+    modObject = flask.request.form
+    myCampaign.getCharacterByID(id).modifyCharacterStats(modObject)
     charData = myCampaign.getCharacterByID(id).getDictionary()
     return flask.jsonify(charData)
 
