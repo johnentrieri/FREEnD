@@ -1,1 +1,0 @@
-directory for react-based SPA client
