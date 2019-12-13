@@ -11,7 +11,7 @@ import math
 
 class Bard(Character):
     def __init__(self,charData,campaign):
-        super().__init__(charData,campaign)
+        super(Bard,self).__init__(charData,campaign)
         
         self.performSpellCalculations()
         self.bardicInspiration()

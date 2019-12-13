@@ -10,23 +10,12 @@ spell_db_file = './db/spells/spells.json'
 item_db_file = './db/items/items.json'
 character_directory = './db/char/'
 
-tempFile = open(spell_db_file,'r+')
-spell_db = json.loads(tempFile.read())
-tempFile.close()
-
-tempFile = open(item_db_file,'r+')
-item_db = json.loads(tempFile.read())
-tempFile.close()
-
-myCampaign = freend.Campaign(spell_db,item_db)
+myCampaign = freend.Campaign(spell_db_file,item_db_file)
 
 char_file_list = os.listdir(character_directory)
 
 for file in char_file_list:
-    tempFile = open(character_directory+file,'r+')
-    tempChar = json.loads(tempFile.read())['character']    
-    myCampaign.addCharacter(tempChar)
-    tempFile.close()
+    myCampaign.addCharacter(character_directory + file)
 
 #
 # Web Server Begin
@@ -43,6 +32,7 @@ def getCharacters():
     for char in myCampaign.characters:
         tmpDict = char.getDictionary()
         chars.append(tmpDict)
+    #TODO - flask.jsonify does not work with JSON "lists", needs to be an object
     return flask.jsonify(chars)
 
 @app.route('/characters/<int:id>', methods=['GET'])

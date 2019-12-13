@@ -6,19 +6,27 @@ Created on Sat Nov  2 00:24:42 2019
 @author: pi
 """
 import math
+import json
 
-class Character():
+class Character(object):
     
     def __init__(self,charDB,campaign):
-        self.inputData = charDB
+        self.inputDataFile = charDB
         self.campaign = campaign
+
+        self.buildCharacter()
+
+    def buildCharacter(self):
+
+        tempFile = open(self.inputDataFile,'r+')
+        self.inputData = json.loads(tempFile.read())['character']   
         
         self.getCharacterInfo()
         self.calculateStats()
         self.populateInventory()
         self.learnSpells()
         
-        self.classData = { "classAbilities" : [] }        
+        self.classData = { "classAbilities" : [] }
         
     def getCharacterInfo(self):
         self.info = {} 
