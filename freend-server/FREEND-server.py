@@ -38,21 +38,33 @@ def index():
 @app.route('/characters/<int:id>', methods=['GET'])
 def getCharacterByID(id):
     charData = myCampaign.getCharacterByID(id).getDictionary()
-    return flask.jsonify(charData)
+
+    response = flask.jsonify(charData)
+    response.headers.add('Access-Control-Allow-Origin', '*')    
+    
+    return response
 
 @app.route('/modifyCharacterInfo/<int:id>', methods=['POST'])
 def modifyCharacterInfo(id):
     modObject = flask.request.form
     myCampaign.getCharacterByID(id).modifyCharacterInfo(modObject)
     charData = myCampaign.getCharacterByID(id).getDictionary()
-    return flask.jsonify(charData)
+    
+    response = flask.jsonify(charData)
+    response.headers.add('Access-Control-Allow-Origin', '*')    
+    
+    return response
 
 @app.route('/modifyCharacterStats/<int:id>', methods=['POST'])
 def modifyCharacterStats(id):
     modObject = flask.request.form
     myCampaign.getCharacterByID(id).modifyCharacterStats(modObject)
     charData = myCampaign.getCharacterByID(id).getDictionary()
-    return flask.jsonify(charData)
+    
+    response = flask.jsonify(charData)
+    response.headers.add('Access-Control-Allow-Origin', '*')    
+    
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
