@@ -8,7 +8,7 @@
 	"character": {
 		"firstName": "Roscoe",
 		"lastName": "Brown",
-		"level": 3,
+		"level": 4,
 		"class": "Bard",
 		"race": "Halfling",
 		"subrace": "Lightfoot",
@@ -19,9 +19,9 @@
 		"alignment": "Chaotic Good",
 		"languages": "Common, Halfling",
 		"stats" :{
-			"HP": 22,
-			"maxHP": 22,
-			"hitDie": 3,
+			"HP": 25,
+			"maxHP": 25,
+			"hitDie": 4,
 			"armorClass": 13
 		},
 		"abilities": {
@@ -29,8 +29,8 @@
 			"dexterity": 15,
 			"constitution": 12,
 			"intelligence": 8,
-			"wisdom": 9,
-			"charisma": 17
+			"wisdom": 10,
+			"charisma": 18
 		},
 		"saveProficiency": {
 			"strength": false,
@@ -67,7 +67,7 @@
 			"survival": false
 		},
 		"bard" : {
-			"bardicInspiration" : 3,
+			"bardicInspiration" : 4,
 			"expertise": {
 				"acrobatics": false,
 				"animalHandling": false,
@@ -97,7 +97,7 @@
 		},
 		"inventory" :  [
 			{ "item" : "Shortbow", "qty" : 1, "equipped": true},
-			{ "item" : "Arrows", "qty" : 53 , "equipped": false},
+			{ "item" : "Arrows", "qty" : 50 , "equipped": false},
 			{ "item" : "Dagger", "qty" : 1, "equipped": true },
 			{ "item" : "Javelin", "qty" : 1, "equipped": true },
 			{ "item" : "Leather Armor", "qty" : 1, "equipped": true},
@@ -127,17 +127,19 @@
 		"spells" : [
 			"Vicious Mockery",
 			"Mage Hand",
+			"Prestidigitation",
 			"Cure Wounds",
+			"Healing Word",
 			"Speak With Animals",
 			"Thunderwave",
 			"Faerie Fire",
-			"Heroism",
+			"Invisibility",
 			"Heat Metal",
 			"Charm Person (Scroll)"
 		],
 		"spellSlots" : {
 			"level1" : 4,
-			"level2" : 2,
+			"level2" : 3,
 			"level3" : 0,
 			"level4" : 0,
 			"level5" : 0,
