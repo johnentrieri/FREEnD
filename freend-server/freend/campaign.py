@@ -40,6 +40,12 @@ class Campaign():
             
     def getCharacters(self):
         return(self.characters)
+
+    def getSpells(self):
+        return(self.spells)
+
+    def getItems(self):
+        return(self.items)
         
     def getCharacterByID(self,id):
         for char in self.characters:

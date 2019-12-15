@@ -26,14 +26,26 @@ app = flask.Flask(__name__)
 def index():
     return "Welcome!"
 
-#TODO - flask.jsonify does not work with JSON "lists", needs to be an object
 # @app.route('/characters/')
-# def getCharacters():
-#     chars = []
-#     for char in myCampaign.characters:
-#         tmpDict = char.getDictionary()
-#         chars.append(tmpDict)    
-#     return flask.jsonify(chars)
+# def getCharacters(): 
+
+#     response = flask.jsonify({'characters' : myCampaign.getCharacters()})
+#     response.headers.add('Access-Control-Allow-Origin', '*')   
+#     return response
+
+@app.route('/spells/')
+def getSpells():
+
+    response = flask.jsonify({'spells' : myCampaign.getSpells()})
+    response.headers.add('Access-Control-Allow-Origin', '*')   
+    return response
+
+@app.route('/items/')
+def getItems(): 
+
+    response = flask.jsonify({'items' : myCampaign.getItems()})
+    response.headers.add('Access-Control-Allow-Origin', '*')   
+    return response
 
 @app.route('/characters/<int:id>', methods=['GET'])
 def getCharacterByID(id):
