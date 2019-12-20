@@ -21,11 +21,9 @@ class FREEnD extends Component {
     }
 
     componentDidMount() {
-        axios.get(API_URL + '/characters/' + this.state.id)
-        .then( (response) => {
-            const charData = response.data;
-            this.setState({ characterData : charData });
-        })
+        
+        this.fetchCharacterData();
+        this.charFetchInterval = setInterval(() => { this.fetchCharacterData(); }, 3000);
 
         axios.get(API_URL + '/spells/')
         .then( (response) => {
@@ -38,9 +36,20 @@ class FREEnD extends Component {
             const itemData = response.data.items;
             this.setState({ items : itemData });
         })
+    }
 
+    componentWillUnmount() {
+        clearInterval(this.charFetchInterval);
+    }
 
-
+    fetchCharacterData = () => {
+        if (this.state.currentPage === "main") {
+            axios.get(API_URL + '/characters/' + this.state.id)
+            .then( (response) => {
+                const charData = response.data;
+                this.setState({ characterData : charData });
+            })
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {}
@@ -101,7 +110,7 @@ class FREEnD extends Component {
 
         axios({
             method: 'post',
-            url: API_URL + '/modifyCharacterInfo/' + this.state.id,
+            url: API_URL + '/modifyCharacter/' + this.state.id,
             data: bodyFormData,
             headers: {'Content-Type': 'multipart/form-data' }
         })
@@ -109,11 +118,7 @@ class FREEnD extends Component {
             console.log(response.status);
         })
         .then(
-            axios.get(API_URL + '/characters/' + this.state.id)
-            .then( (response) => {
-                const charData = response.data;
-                this.setState({ characterData : charData , currentPage : "main" });
-            })
+                this.setState({ currentPage : "main" })
         )
     }
 

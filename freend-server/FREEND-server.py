@@ -56,6 +56,17 @@ def getCharacterByID(id):
     
     return response
 
+@app.route('/modifyCharacter/<int:id>', methods=['POST'])
+def modifyCharacter(id):
+    modObject = flask.request.form
+    myCampaign.getCharacterByID(id).modifyCharacter(modObject)
+    charData = myCampaign.getCharacterByID(id).getDictionary()
+    
+    response = flask.jsonify(charData)
+    response.headers.add('Access-Control-Allow-Origin', '*')    
+    
+    return response
+
 @app.route('/modifyCharacterInfo/<int:id>', methods=['POST'])
 def modifyCharacterInfo(id):
     modObject = flask.request.form

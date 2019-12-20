@@ -29,6 +29,24 @@ class Character(object):
         
         self.classData = { "classAbilities" : [] }
 
+    def modifyCharacter(self,modObject):
+        tempFile = open(self.inputDataFile,'r+')
+        tempData = json.loads(tempFile.read())
+        tempFile.close()
+
+        for key in modObject.keys():
+            if key in tempData['character'].keys():
+                tempData['character'][key] = modObject[key]
+                
+            if key in tempData['character']['stats'].keys():
+                tempData['character']['stats'][key] = modObject[key]
+
+        tempFile = open(self.inputDataFile,'w+')
+        tempFile.write(json.dumps(tempData))
+        tempFile.close()
+
+        self.buildCharacter()
+
     def modifyCharacterInfo(self,modObject):
         tempFile = open(self.inputDataFile,'r+')
         tempData = json.loads(tempFile.read())

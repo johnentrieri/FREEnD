@@ -1,17 +1,18 @@
 import React from 'react';
 
-import EditInfoPanel from './EditInfoPanel/EditInfoPanel'
+import EditInfoPanel from './EditInfoPanel/EditInfoPanel';
+import EditStatsPanel from './EditStatsPanel/EditStatsPanel';
 
 const characterEditor = (props) => {
     return (
         <div className="container">
-            <h1>Edit Character</h1>
-            <div className="row">
+            <h3 className="my-2">Edit Character</h3>
+            <div className="row mt-4">
                 <div className="col-md-4">
                     <EditInfoPanel data={props.data} />
                 </div>
                 <div className="col-md-4">
-
+                    <EditStatsPanel data={props.data} />
                 </div>
                 <div className="col-md-4">
 
