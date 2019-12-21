@@ -6,9 +6,9 @@ const editProficienciesPanel = (props) => {
 
         const skillCheckboxes = Object.keys(props.data.stats.skills).map( (skill,index) => {
             const label = skill.charAt(0).toUpperCase() + skill.slice(1);
-            let input = <input disabled type="checkbox" id={skill} ></input>
+            let input = <input disabled type="checkbox" id={skill + "-check"} ></input>
             if (props.data.stats.skills[skill].isCheckProf) {
-                input = <input disabled checked type="checkbox" id={skill} ></input>;
+                input = <input disabled checked type="checkbox" id={skill  + "-check"} ></input>;
             }
             return(
                 <div className="text-left" key={index + "-editSkillProficienciesPanel-" + skill}>                    
@@ -19,9 +19,9 @@ const editProficienciesPanel = (props) => {
 
         const saveCheckboxes = Object.keys(props.data.stats.abilities).map( (ability,index) => {
             const label = ability.charAt(0).toUpperCase() + ability.slice(1) + " Save";
-            let input = <input disabled type="checkbox" id={ability} ></input>
+            let input = <input disabled type="checkbox" id={ability + "-save"} ></input>
             if (props.data.stats.abilities[ability].isSaveProf) {
-                input = <input disabled checked type="checkbox" id={ability} ></input>;
+                input = <input disabled checked type="checkbox" id={ability + "-save"} ></input>;
             }
             return(
                 <div className="text-left" key={index + "-editAbilityProficienciesPanel-" + ability}>                    

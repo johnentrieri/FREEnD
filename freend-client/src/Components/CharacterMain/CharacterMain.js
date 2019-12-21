@@ -4,6 +4,7 @@ import InfoPanel from './InfoPanel/InfoPanel';
 import AbilitiesPanel from './AbilitiesPanel/AbilitiesPanel';
 import SkillsPanel from './SkillsPanel/SkillsPanel';
 import StatsPanel from './StatsPanel/StatsPanel';
+import ClassPanel from './ClassPanel/ClassPanel';
 
 const characterMain = (props) => {
     return (
@@ -18,7 +19,8 @@ const characterMain = (props) => {
                     <SkillsPanel data={props.data} />
                 </div>
                 <div className="col-md-4">
-                    <AbilitiesPanel data={props.data} />    
+                    <AbilitiesPanel data={props.data} /> 
+                    <ClassPanel data={props.data} />   
                 </div>
             </div>
         </div>
