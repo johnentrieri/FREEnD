@@ -5,6 +5,7 @@ import EditStatsPanel from './EditStatsPanel/EditStatsPanel';
 import EditAbilitiesPanel from './EditAbilitiesPanel/EditAbilitiesPanel';
 import EditCurrencyPanel from './EditCurrencyPanel/EditCurrencyPanel';
 import EditProficienciesPanel from './EditProficienciesPanel/EditProficienciesPanel';
+import EditSpellSlotsPanel from './EditSpellSlotsPanel/EditSpellSlotsPanel';
 
 const characterEditor = (props) => {
     return (
@@ -17,7 +18,8 @@ const characterEditor = (props) => {
                 </div>
                 <div className="col-md-4">
                     <EditStatsPanel data={props.data} />                  
-                    <EditAbilitiesPanel data={props.data} />                    
+                    <EditAbilitiesPanel data={props.data} />
+                    <EditSpellSlotsPanel data={props.data} />              
                 </div>
                 <div className="col-md-4">
                     <EditProficienciesPanel data={props.data} />

@@ -2,7 +2,7 @@ import React from 'react';
 
 const skillsPanel = (props) => {
     if (props.data.stats !== undefined) {
-        const skills = Object.keys(props.data.stats.skills).map( (key) => {
+        const skills = Object.keys(props.data.stats.skills).map( (key,index) => {
             const label = key.charAt(0).toUpperCase() + key.slice(1);
 
             const prof = props.data.stats.skills[key]['isCheckProf'] ? "*" : "";
@@ -12,7 +12,7 @@ const skillsPanel = (props) => {
             check += props.data.stats.skills[key]['check'] + ")"
 
             return (
-                <tr>
+                <tr key={index + "-skillsPanel-" + key}>
                     <td><b>{prof}</b></td>
                     <td className="text-left">{label}</td>
                     <td>{check}</td>    

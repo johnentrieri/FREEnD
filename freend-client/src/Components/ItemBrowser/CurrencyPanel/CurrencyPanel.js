@@ -6,10 +6,10 @@ const currencyPanel = (props) => {
 
     if (props.data.inventory !== undefined) {
 
-        currency = Object.keys(props.data.inventory.currency).map( (currency) => {
+        currency = Object.keys(props.data.inventory.currency).map( (currency,index) => {
             const label = currency.charAt(0).toUpperCase() + currency.slice(1) + ": ";
             return(
-                <div className="row text-left">
+                <div className="row text-left"  key={index + "-currencyPanel-" + currency}>
                     <div className="col-sm-6">
                         <p><strong>{label}</strong></p>
                     </div>

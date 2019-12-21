@@ -4,11 +4,11 @@ const editCurrencyPanel = (props) => {
 
     if (props.data.inventory !== undefined) {
 
-        const currencyInputs = Object.keys(props.data.inventory.currency).map( (currency) => {
+        const currencyInputs = Object.keys(props.data.inventory.currency).map( (currency,index) => {
             if( currency !== "total") {
             const label = currency.charAt(0).toUpperCase() + currency.slice(1) + ": ";
                 return(
-                    <div className="row">
+                    <div className="row" key={index + "-editCurrencyPanel-" + currency}>
                         <div className="col-sm-4 text-left">
                             <p>{label}</p>
                         </div>
@@ -20,7 +20,7 @@ const editCurrencyPanel = (props) => {
             }
             else {
                 return(
-                    <div />
+                    <div key={index + "-editCurrencyPanel-" + currency}/>
                 )
             }
         })

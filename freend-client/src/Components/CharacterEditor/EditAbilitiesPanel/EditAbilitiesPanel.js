@@ -5,10 +5,10 @@ const editAbilitiesPanel = (props) => {
 
     if (props.data.stats !== undefined) {
 
-        const abilityInputs = Object.keys(props.data.stats.abilities).map( (ability) => {
+        const abilityInputs = Object.keys(props.data.stats.abilities).map( (ability,index) => {
             const label = ability.charAt(0).toUpperCase() + ability.slice(1) + ": ";
             return(
-                <div className="row">
+                <div className="row" key={index + "-editAbilitiesPanel-" + ability}>
                     <div className="col-sm-6 text-left">
                         <p>{label}</p>
                     </div>

@@ -2,9 +2,14 @@ import React from 'react';
 
 const itemNavigator = (props) => {
 
-    const navItems = props.items.map( (item) => {
+    const navItems = props.items.map( (item,index) => {
         return(
-            <button onClick ={() => (props.handler(item.item))} className="list-group-item list-group-item-action">{item.item}</button>
+            <button
+                key={index + "-itemNavigator-" + item}
+                onClick ={() => (props.handler(item.item))}
+                className="list-group-item list-group-item-action">
+                    {item.item}
+                </button>
         )
     })
     return(

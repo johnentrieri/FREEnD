@@ -1,8 +1,8 @@
 import React from 'react';
 
-const infoPanel = (props) => {
+const abilitiesPanel = (props) => {
     if (props.data.stats !== undefined) {
-        const abilities = Object.keys(props.data.stats.abilities).map( (key) => {
+        const abilities = Object.keys(props.data.stats.abilities).map( (key,index) => {
             const label = key.charAt(0).toUpperCase() + key.slice(1);
 
             const saveProf = props.data.stats.abilities[key]['isSaveProf'] ? "*" : "";
@@ -26,7 +26,7 @@ const infoPanel = (props) => {
 
 
             return (
-                <tr>
+                <tr key={index +"-abilitiesPanel-" + key}>
                     <td><b>{saveProf}</b></td>
                     <td className="text-left">{label}</td>
                     <td>{score}</td>
@@ -62,4 +62,4 @@ const infoPanel = (props) => {
     }
 };
 
-export default infoPanel;
+export default abilitiesPanel;

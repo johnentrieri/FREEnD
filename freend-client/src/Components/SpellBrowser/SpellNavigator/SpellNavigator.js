@@ -2,9 +2,14 @@ import React from 'react';
 
 const spellNavigator = (props) => {
 
-    const navItems = props.spells.map( (spell) => {
+    const navItems = props.spells.map( (spell,index) => {
         return(
-            <button onClick ={() => (props.handler(spell.spell))} className="list-group-item list-group-item-action">{spell.spell}</button>
+            <button 
+                key={index + "-spellNavigator-" + spell}
+                onClick ={() => (props.handler(spell.spell))}
+                className="list-group-item list-group-item-action" >
+                    {spell.spell}
+            </button>
         )
     })
     return(

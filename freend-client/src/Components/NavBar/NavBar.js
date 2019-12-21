@@ -1,9 +1,9 @@
 import React from 'react';
 
 const navBar = (props) => {
-    const buttons = props.pageData.map( (pageData) => {
+    const buttons = props.pageData.map( (pageData,index) => {
         return(
-        <button className="btn btn-dark m-1" onClick={pageData.handler}>{pageData.name}</button>
+        <button key={index + "-" + pageData.name} className="btn btn-dark m-1" onClick={pageData.handler}>{pageData.name}</button>
         );
     })
     return (
