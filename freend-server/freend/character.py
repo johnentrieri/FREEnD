@@ -41,6 +41,12 @@ class Character(object):
             if key in tempData['character']['stats'].keys():
                 tempData['character']['stats'][key] = modObject[key]
 
+            if key in tempData['character']['currency'].keys():
+                tempData['character']['currency'][key] = modObject[key]
+
+            if key in tempData['character']['abilities'].keys():
+                tempData['character']['abilities'][key] = modObject[key]
+
         tempFile = open(self.inputDataFile,'w+')
         tempFile.write(json.dumps(tempData))
         tempFile.close()
@@ -125,7 +131,10 @@ class Character(object):
                     self.spells.append(dbSpell)
         
     def calculateCurrency(self):
-        self.inventory['currency'] = self.inputData['currency']
+        #self.inventory['currency'] = self.inputData['currency']
+        for key in self.inputData['currency'].keys():
+            self.inventory['currency'][key] = float(self.inputData['currency'][key])
+
         self.inventory['currency']['total'] = (self.inventory['currency']['platinum'] * 10.0) + (self.inventory['currency']['gold'] * 1.0) + (self.inventory['currency']['silver'] * 0.1) + (self.inventory['currency']['copper'] * 0.01)
     
     def calculateSpeed(self):

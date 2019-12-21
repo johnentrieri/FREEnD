@@ -2,6 +2,9 @@ import React from 'react';
 
 import EditInfoPanel from './EditInfoPanel/EditInfoPanel';
 import EditStatsPanel from './EditStatsPanel/EditStatsPanel';
+import EditAbilitiesPanel from './EditAbilitiesPanel/EditAbilitiesPanel';
+import EditCurrencyPanel from './EditCurrencyPanel/EditCurrencyPanel';
+import EditProficienciesPanel from './EditProficienciesPanel/EditProficienciesPanel';
 
 const characterEditor = (props) => {
     return (
@@ -10,12 +13,14 @@ const characterEditor = (props) => {
             <div className="row mt-4">
                 <div className="col-md-4">
                     <EditInfoPanel data={props.data} />
+                    <EditCurrencyPanel data={props.data} />
                 </div>
                 <div className="col-md-4">
-                    <EditStatsPanel data={props.data} />
+                    <EditStatsPanel data={props.data} />                  
+                    <EditAbilitiesPanel data={props.data} />                    
                 </div>
                 <div className="col-md-4">
-
+                    <EditProficienciesPanel data={props.data} />
                 </div>
             </div>
             <div className="row m-auto">

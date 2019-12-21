@@ -3,10 +3,10 @@ import React from 'react';
 const editStatsPanel = (props) => {
     if (props.data.stats !== undefined) {
         return (
-            <div className="container">
-                <h3>Stats</h3>
+            <div className="container text-left">
+                <h3 className="text-center my-4">Stats</h3>
                 <div className="row">
-                    <div className="col-sm-6 text-right">
+                    <div className="col-sm-6">
                         <p>HP: </p>
                     </div>
                     <div className="col-sm-6">
@@ -14,7 +14,7 @@ const editStatsPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-6 text-right">
+                    <div className="col-sm-6">
                         <p>Max HP: </p>
                     </div>
                     <div className="col-sm-6">
@@ -22,7 +22,7 @@ const editStatsPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-6 text-right">
+                    <div className="col-sm-6">
                         <p>Hit Die: </p>
                     </div>
                     <div className="col-sm-6">
@@ -30,7 +30,7 @@ const editStatsPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-6 text-right">
+                    <div className="col-sm-6">
                         <p>Armor Class: </p>
                     </div>
                     <div className="col-sm-6">

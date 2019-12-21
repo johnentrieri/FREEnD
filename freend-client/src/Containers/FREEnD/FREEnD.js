@@ -7,7 +7,7 @@ import CharacterMain from '../../Components/CharacterMain/CharacterMain';
 import SpellBrowser from '../../Components/SpellBrowser/SpellBrowser';
 import ItemBrowser from '../../Components/ItemBrowser/ItemBrowser';
 
-const API_URL = "http://192.168.1.30:5000";
+const API_URL = "http://localhost:5000";
 
 class FREEnD extends Component {
     state = {

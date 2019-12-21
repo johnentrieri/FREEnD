@@ -3,10 +3,10 @@ import React from 'react';
 const editInfoPanel = (props) => {
     if (props.data.info !== undefined) {
         return (
-            <div className="container">
-                <h3>Info</h3>
+            <div className="container text-left">
+                <h3 className="my-4 text-center">Info</h3>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Name: </p>
                     </div>
                     <div className="col-sm-8">
@@ -14,7 +14,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Level: </p>
                     </div>
                     <div className="col-sm-8">
@@ -22,7 +22,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Subrace: </p>
                     </div>
                     <div className="col-sm-8">
@@ -30,7 +30,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Race: </p>
                     </div>
                     <div className="col-sm-8">
@@ -38,7 +38,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Class: </p>
                     </div>
                     <div className="col-sm-8">
@@ -46,7 +46,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Age: </p>
                     </div>
                     <div className="col-sm-8">
@@ -54,7 +54,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Height: </p>
                     </div>
                     <div className="col-sm-8">
@@ -62,7 +62,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Weight: </p>
                     </div>
                     <div className="col-sm-8">
@@ -70,7 +70,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Alignment: </p>
                     </div>
                     <div className="col-sm-8">
@@ -78,7 +78,7 @@ const editInfoPanel = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 text-right">
+                    <div className="col-sm-4">
                         <p>Background: </p>
                     </div>
                     <div className="col-sm-8">
